@@ -94,15 +94,39 @@
                 <a href="#faq" id="nav-faq" class="hover:text-orange-500 transition-colors">FAQ</a>
             </div>
 
-            <select onchange="changeLanguage(this.value)" id="lang-selector"
-                style="font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', 'Android Emoji', 'EmojiSymbols'; font-size: 1.1rem;"
-                class="bg-slate-100 border-none p-2 rounded-xl focus:outline-none cursor-pointer shadow-sm font-bold min-w-[120px]">
-                <option value="es">Español</option>
-                <option value="en">English</option>
-                <option value="fr">Français</option>
-                <option value="it">Italiano</option>
-                <option value="de">Deutsch</option>
-            </select>
+            <div class="relative inline-block text-left" id="custom-select-container">
+                <button onclick="toggleLangMenu()" id="lang-btn"
+                    class="bg-slate-100 border-none text-base p-3 rounded-xl focus:outline-none cursor-pointer shadow-sm font-bold min-w-[120px] flex items-center justify-between gap-2">
+                    <span id="lang-selected" class="flex items-center gap-2">
+                        <img src="https://flagcdn.com/w20/es.png" width="20" alt="ES"> ES
+                    </span>
+                    <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400"></i>
+                </button>
+
+                <div id="lang-options"
+                    class="hidden absolute right-0 mt-2 w-44 bg-white rounded-2xl shadow-2xl border border-slate-100 overflow-hidden z-[500]">
+                    <div onclick="selectLang('es')"
+                        class="px-4 py-3 hover:bg-orange-50 cursor-pointer flex items-center gap-3 font-bold text-slate-700">
+                        <img src="https://flagcdn.com/w20/es.png" width="20"> Español
+                    </div>
+                    <div onclick="selectLang('en')"
+                        class="px-4 py-3 hover:bg-orange-50 cursor-pointer flex items-center gap-3 font-bold text-slate-700">
+                        <img src="https://flagcdn.com/w20/gb.png" width="20"> English
+                    </div>
+                    <div onclick="selectLang('fr')"
+                        class="px-4 py-3 hover:bg-orange-50 cursor-pointer flex items-center gap-3 font-bold text-slate-700">
+                        <img src="https://flagcdn.com/w20/fr.png" width="20"> Français
+                    </div>
+                    <div onclick="selectLang('it')"
+                        class="px-4 py-3 hover:bg-orange-50 cursor-pointer flex items-center gap-3 font-bold text-slate-700">
+                        <img src="https://flagcdn.com/w20/it.png" width="20"> Italiano
+                    </div>
+                    <div onclick="selectLang('de')"
+                        class="px-4 py-3 hover:bg-orange-50 cursor-pointer flex items-center gap-3 font-bold text-slate-700">
+                        <img src="https://flagcdn.com/w20/de.png" width="20"> Deutsch
+                    </div>
+                </div>
+            </div>
         </div>
     </nav>
 
@@ -369,11 +393,8 @@
         };
 
         function changeLanguage(lang) {
+            currentLang = lang; // Actualizamos la variable global
             const t = i18n[lang] || i18n['es'];
-
-            // Forzamos que el selector de idioma mantenga la bandera visual
-            const langSel = document.getElementById('lang-selector');
-            if (langSel.value !== lang) langSel.value = lang;
 
             // Títulos y Textos principales
             document.getElementById('hero-title').innerHTML = t.hero;
@@ -390,21 +411,21 @@
             document.getElementById('seo-p1').innerText = t.p1;
             document.getElementById('seo-p2').innerText = t.p2;
 
-            // Traducción del menú de cabecera
+            // Traducción del menú de cabecera (Nav)
             document.getElementById('nav-calc').innerText = t.nav_c;
             document.getElementById('nav-guide').innerText = t.nav_g;
             document.getElementById('nav-faq').innerText = t.nav_f;
 
-            // Traducción de los botones del Footer (¡Lo que faltaba, cabronazo!)
+            // Traducción de los botones del Footer (Los que te daban guerra)
             document.getElementById('btn-f-legal').innerText = t.f_legal;
             document.getElementById('btn-f-priv').innerText = t.f_priv;
             document.getElementById('btn-f-cook').innerText = t.f_cook;
 
-            // Actualizar Selector de Alimentos
+            // Actualizar Selector de Alimentos (El desplegable de la calculadora)
             const sel = document.getElementById('alimento-principal');
             sel.innerHTML = Object.keys(foodData).map(k => `<option value="${k}">${foodData[k].icono} ${foodData[k].nombres[lang] || foodData[k].nombres['es']}</option>`).join('');
 
-            // Actualizar Guía Visual
+            // Actualizar Guía Visual (Las tarjetitas de abajo)
             document.getElementById('guia-full').innerHTML = Object.keys(foodData).map(k => `
         <div onclick="seleccionarGuia('${k}')" class="p-4 bg-white rounded-3xl text-center border border-slate-100 hover:border-orange-400 transition-all cursor-pointer shadow-sm">
             <p class="text-2xl mb-2">${foodData[k].icono}</p>
@@ -412,7 +433,7 @@
             <p class="text-[10px] font-bold text-slate-800">${foodData[k].tiempo}' - ${foodData[k].temp}</p>
         </div>`).join('');
 
-            // Actualizar FAQs con textos largos
+            // Actualizar FAQ
             const fData = faqData[lang] || faqData['es'];
             document.getElementById('faq-container').innerHTML = fData.map(f => `
         <details class="group p-4 border-b border-slate-100 cursor-pointer">
@@ -421,15 +442,15 @@
         </details>`).join('');
 
             actualizarTodo();
-            lucide.createIcons(); // Recarga los iconos de Lucide
+            if (window.lucide) lucide.createIcons(); // Para que no pete si Lucide no ha cargado
         }
 
         function actualizarTodo() {
-            const lang = document.getElementById('lang-selector').value;
+            const lang = currentLang; // Usamos la variable global que actualiza selectLang
             const key = document.getElementById('alimento-principal').value;
             const d = foodData[key];
 
-            // Cálculo de ahorro (esto ya lo tenías bien, fiera)
+            // Cálculos de ahorro
             const ahorroEuros = ((2.5 - 1.5) * (d.tiempo / 60)) * 0.18;
             const cal = Math.max(0, Math.round(((d.trad * 0.15) - d.air) * 9));
 
@@ -438,22 +459,32 @@
             document.getElementById('calorias-text').innerText = `-${cal}`;
             document.getElementById('ejercicio-text').innerText = `${Math.round(cal / 10)} min`;
 
-            // AQUÍ ESTÁ EL CAMBIO: Busca el tip por idioma, si no existe, pone el de español
+            // El Consejo Traducido (¡Por fin!)
             document.getElementById('tip-texto').innerText = d.tips[lang] || d.tips['es'];
 
+            // Título del consejo y tiempo/temp
             document.getElementById('nombre-comida-truco').innerText = (d.nombres[lang] || d.nombres['es']).toUpperCase();
-            document.getElementById('tiempo-tag').innerText = `${d.tiempo} ${(i18n[lang] || i18n['es']).min_at} ${d.temp}`;
+            const tLabel = i18n[lang] || i18n['es'];
+            document.getElementById('tiempo-tag').innerText = `${d.tiempo} ${tLabel.min_at} ${d.temp}`;
         }
 
         function compartir(tipo) {
-            const lang = document.getElementById('lang-selector').value;
+            const lang = currentLang;
             const t = i18n[lang] || i18n['es'];
             const key = document.getElementById('alimento-principal').value;
             const f = foodData[key].nombres[lang] || foodData[key].nombres['es'];
-            const valX = (tipo === 'dinero') ? document.getElementById('ahorro-hoy-text').innerText : document.getElementById('calorias-text').innerText;
+
+            // Limpiamos el dinero (quitando €) y las calorías (quitando el menos)
+            let valX = (tipo === 'dinero') ?
+                document.getElementById('ahorro-hoy-text').innerText.replace('€', '').trim() :
+                document.getElementById('calorias-text').innerText.replace('-', '').trim();
+
             const valY = document.getElementById('ejercicio-text').innerText.split(' ')[0];
 
-            let msg = (tipo === 'dinero') ? t.msg_m.replace('{X}', valX).replace('{F}', f) : t.msg_h.replace('{X}', valX).replace('{F}', f).replace('{Y}', valY);
+            let msg = (tipo === 'dinero') ?
+                t.msg_m.replace('{X}', valX).replace('{F}', f) :
+                t.msg_h.replace('{X}', valX).replace('{F}', f).replace('{Y}', valY);
+
             window.open(`https://wa.me/?text=${encodeURIComponent(msg + " " + window.location.href)}`, '_blank');
         }
 
@@ -464,10 +495,11 @@
         }
 
         function showLegal(t) {
-            const lang = document.getElementById('lang-selector').value;
+            // Usamos la variable global currentLang que es la que manda ahora
+            const lang = currentLang;
             const texts = legalTexts[lang] || legalTexts['es'];
 
-            // Títulos traducidos según el tipo
+            // Títulos traducidos según el tipo (legal, privacidad o cookies)
             const titles = {
                 es: { legal: "Aviso Legal", privacidad: "Privacidad", cookies: "Política de Cookies" },
                 en: { legal: "Legal Notice", privacidad: "Privacy Policy", cookies: "Cookie Policy" },
@@ -476,14 +508,78 @@
                 de: { legal: "Impressum", privacidad: "Datenschutz", cookies: "Cookies" }
             };
 
-            document.getElementById('modal-title').innerText = titles[lang][t] || titles['es'][t];
-            document.getElementById('modal-body').innerText = texts[t];
-            document.getElementById('modal-container').classList.remove('hidden');
+            const modalTitle = document.getElementById('modal-title');
+            const modalBody = document.getElementById('modal-body');
+            const modalContainer = document.getElementById('modal-container');
+
+            if (modalTitle && modalBody && modalContainer) {
+                modalTitle.innerText = titles[lang][t] || titles['es'][t];
+                modalBody.innerText = texts[t];
+                modalContainer.classList.remove('hidden');
+            }
         }
 
         function closeLegal() { document.getElementById('modal-container').classList.add('hidden'); }
 
         window.onload = () => { changeLanguage('es'); };
+
+        let currentLang = 'es';
+
+        function toggleLangMenu() {
+            document.getElementById('lang-options').classList.toggle('hidden');
+        }
+
+        window.onclick = function (event) {
+            if (!event.target.closest('#custom-select-container')) {
+                const menu = document.getElementById('lang-options');
+                if (menu) menu.classList.add('hidden');
+            }
+        }
+
+        function selectLang(lang) {
+            const data = {
+                es: { img: 'es', txt: 'ES' },
+                en: { img: 'gb', txt: 'EN' },
+                fr: { img: 'fr', txt: 'FR' },
+                it: { img: 'it', txt: 'IT' },
+                de: { img: 'de', txt: 'DE' }
+            };
+
+            const selected = data[lang];
+            document.getElementById('lang-selected').innerHTML = `
+        <img src="https://flagcdn.com/w20/${selected.img}.png" width="20"> ${selected.txt}
+    `;
+
+            document.getElementById('lang-options').classList.add('hidden');
+            changeLanguage(lang);
+        }
+
+        // Cerrar el menú si haces clic fuera
+        window.onclick = function (event) {
+            if (!event.target.closest('#custom-select-container')) {
+                document.getElementById('lang-options').classList.add('hidden');
+            }
+        }
+
+
+        // Al cargar la ventana, detectamos el idioma del "cliente"
+        window.onload = function () {
+            // Sacamos el código de dos letras (ej: 'es-ES' -> 'es')
+            let browserLang = navigator.language || navigator.userLanguage;
+            browserLang = browserLang.substring(0, 2).toLowerCase();
+
+            // Lista de idiomas que soportamos
+            const supportedLangs = ['es', 'en', 'fr', 'it', 'de'];
+
+            // Si el idioma del nota no lo tenemos, le encasquetamos el inglés por defecto
+            const targetLang = supportedLangs.includes(browserLang) ? browserLang : 'en';
+
+            // Ejecutamos la lógica de cambio de idioma
+            selectLang(targetLang);
+
+            // Inicializamos los iconos de Lucide por si acaso
+            if (window.lucide) lucide.createIcons();
+        };        
     </script>
 </body>
 
