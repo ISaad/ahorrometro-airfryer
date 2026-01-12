@@ -4,22 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Airfryer Saver | Calculadora de Ahorro y Salud ⚡</title>
-
+    <title>Airfryer Saver | Calcula tu ahorro de Dinero y Salud ⚡</title>
     <meta name="description"
-        content="Calcula cuánto dinero y calorías ahorras usando tu freidora de aire frente al horno convencional. ¡Ahorra hasta un 40% en tu factura de luz!">
-    <meta property="og:title" content="Airfryer Saver | ¿Cuánto ahorras hoy?">
-    <meta property="og:description" content="Calcula tu ahorro energético y de salud en un clic.">
-    <meta property="og:type" content="website">
-
+        content="Calculadora de ahorro para Airfryer. Descubre cuánto dinero en luz y cuántas calorías ahorras frente al horno convencional. Guía de tiempos 2026.">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
-
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap"
+        rel="stylesheet">
     <style>
-        @keyframes fadeIn {
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        @keyframes slideUp {
             from {
                 opacity: 0;
-                transform: translateY(10px);
+                transform: translateY(20px);
             }
 
             to {
@@ -28,385 +29,349 @@
             }
         }
 
-        .animate-fade-in {
-            animation: fadeIn 0.5s ease-out forwards;
+        .animate-slide-up {
+            animation: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
 
-        /* Personalización de la barra de desplazamiento */
-        ::-webkit-scrollbar {
-            width: 8px;
+        .glass {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
         }
 
-        ::-webkit-scrollbar-track {
-            background: #f1f1f1;
+        svg {
+            pointer-events: none;
         }
 
-        ::-webkit-scrollbar-thumb {
-            background: #e2e8f0;
-            border-radius: 10px;
+        select {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
         }
 
-        ::-webkit-scrollbar-thumb:hover {
-            background: #cbd5e1;
+        details>summary {
+            list-style: none;
+        }
+
+        details>summary::-webkit-details-marker {
+            display: none;
         }
     </style>
 </head>
 
-<body class="bg-slate-50 font-sans antialiased text-slate-900">
+<body class="bg-[#F8FAFC] text-slate-900 antialiased">
 
-    <nav class="bg-white border-b border-slate-100 py-4 sticky top-0 z-50">
-        <div class="max-w-5xl mx-auto px-4 flex justify-between items-center">
-            <div class="flex items-center gap-2 font-bold text-orange-600 text-xl tracking-tighter">
-                <i data-lucide="zap" class="w-6 h-6 fill-orange-500"></i>
-                <span>Airfryer Saver</span>
+    <nav class="sticky top-0 z-[100] glass border-b border-slate-200/50 py-4">
+        <div class="max-w-6xl mx-auto px-6 flex justify-between items-center">
+            <div class="flex items-center gap-2 group cursor-pointer" onclick="window.location.reload()">
+                <div
+                    class="bg-orange-500 p-1.5 rounded-lg group-hover:rotate-12 transition-transform shadow-lg shadow-orange-200">
+                    <i data-lucide="zap" class="w-5 h-5 text-white fill-white"></i>
+                </div>
+                <span class="text-xl font-extrabold tracking-tight text-slate-800">Airfryer<span
+                        class="text-orange-500">Saver</span></span>
             </div>
-            <div class="flex gap-4 items-center">
-                <button onclick="document.getElementById('modal-legal').classList.remove('hidden')"
-                    class="text-xs text-slate-400 hover:text-orange-500 font-bold uppercase tracking-widest transition-colors">Info
-                    Legal</button>
+            <div class="hidden md:flex gap-6 text-[10px] font-black uppercase tracking-widest text-slate-400">
+                <a href="#calculadora" class="hover:text-orange-500 transition-colors">Calculadora</a>
+                <a href="#tiempos" class="hover:text-orange-500 transition-colors">Tiempos</a>
+                <a href="#blog" class="hover:text-orange-500 transition-colors">Guía Pro</a>
+                <a href="#faq" class="hover:text-orange-500 transition-colors">Preguntas</a>
             </div>
         </div>
     </nav>
 
-    <main class="max-w-5xl mx-auto px-4 py-8">
+    <main class="max-w-4xl mx-auto px-6 py-12">
 
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+        <section id="calculadora" class="text-center mb-12 animate-slide-up">
+            <h1 class="text-4xl md:text-6xl font-[800] text-slate-900 mb-6 tracking-tight leading-tight">
+                Cocina mejor, <span class="text-orange-500">ahorra dinero.</span>
+            </h1>
+            <p class="text-slate-500 text-lg max-w-xl mx-auto font-medium italic">
+                Elige tu plato y descubre el ahorro real en luz y calorías al usar tu freidora de aire.
+            </p>
+        </section>
 
-            <div class="space-y-8">
+        <section
+            class="bg-white rounded-[2.5rem] p-3 shadow-2xl shadow-orange-200/30 mb-10 animate-slide-up border border-orange-100">
+            <div class="relative">
+                <div class="absolute left-6 top-1/2 -translate-y-1/2 text-orange-500">
+                    <i data-lucide="utensils" class="w-6 h-6"></i>
+                </div>
+                <select id="alimento-principal" onchange="actualizarTodo()"
+                    class="w-full pl-16 pr-12 py-6 bg-transparent text-xl md:text-2xl font-[800] focus:outline-none text-slate-800 cursor-pointer"></select>
+                <div class="absolute right-6 top-1/2 -translate-y-1/2 pointer-events-none flex items-center gap-2">
+                    <span
+                        class="text-[10px] font-black text-slate-300 uppercase tracking-widest hidden md:block">Cambiar
+                        plato</span>
+                    <i data-lucide="chevron-down" class="w-6 h-6 text-orange-500"></i>
+                </div>
+            </div>
+        </section>
 
-                <section id="calculadora"
-                    class="bg-white rounded-[2rem] shadow-xl overflow-hidden border border-slate-100 animate-fade-in">
-                    <div class="bg-orange-500 p-8 text-white text-center">
-                        <h1 class="text-3xl font-black mb-2 italic uppercase tracking-tighter">¿Cuánto ahorras hoy?</h1>
-                        <p class="opacity-90 font-medium text-sm">Introduce los minutos y mira la magia</p>
-                    </div>
-
-                    <div class="p-8">
-                        <div class="mb-6">
-                            <label for="minutos"
-                                class="block text-slate-500 font-bold mb-3 text-xs uppercase tracking-[0.2em]">Tiempo de
-                                cocción (min):</label>
-                            <input type="number" id="minutos" oninput="calcular()" placeholder="Ej: 20"
-                                class="w-full p-5 text-4xl font-black border-2 border-slate-100 rounded-2xl focus:border-orange-500 focus:outline-none transition-all placeholder:text-slate-200 text-slate-800">
-                        </div>
-
-                        <div id="resultado" class="min-h-[100px] transition-all">
-                            <div class="text-center p-6 border-2 border-dashed border-slate-100 rounded-3xl">
-                                <p class="text-slate-300 text-sm font-medium italic">Escribe los minutos para ver el
-                                    ahorro...</p>
-                            </div>
-                        </div>
-
-                        <div id="share-container" class="mt-6 hidden animate-fade-in">
-                            <button onclick="compartirWhatsApp()"
-                                class="w-full bg-[#25D366] text-white font-bold py-4 rounded-2xl hover:scale-[1.02] active:scale-95 transition-all flex items-center justify-center gap-3 shadow-lg shadow-green-100">
-                                <i data-lucide="message-circle" class="w-5 h-5"></i> Compartir este ahorro
-                            </button>
-                        </div>
-                    </div>
-                </section>
-
-                <section id="aceite"
-                    class="bg-white rounded-[2rem] p-8 shadow-md border border-slate-100 animate-fade-in"
-                    style="animation-delay: 0.1s;">
-                    <div class="flex items-center justify-between mb-6">
-                        <h2 class="text-xl font-bold text-slate-800 flex items-center gap-2">
-                            <i data-lucide="droplet" class="text-blue-500 w-5 h-5"></i> Aceite y Calorías
-                        </h2>
-                        <span
-                            class="bg-blue-50 text-blue-600 text-[10px] font-black px-2 py-1 rounded-lg uppercase tracking-tighter italic">Salud
-                            Pro</span>
-                    </div>
-
-                    <div class="space-y-4">
-                        <div class="relative">
-                            <select id="alimento-aceite" onchange="actualizarAceite()"
-                                class="w-full p-4 bg-slate-50 border border-slate-200 rounded-2xl text-sm font-bold focus:outline-none focus:border-blue-500 appearance-none cursor-pointer text-slate-700">
-                                <option value="patatas">🍟 Patatas fritas (ración grande)</option>
-                                <option value="pollo">🍗 Alitas de pollo (6-8 uds)</option>
-                                <option value="empanados">🍤 San Jacobos o Nuggets</option>
-                                <option value="croquetas">🧆 Croquetas (ración)</option>
-                                <option value="pescado">🐟 Pescado rebozado</option>
-                                <option value="verduras">🥦 Verduras (mix tempura)</option>
-                                <option value="pimientos">🫑 Pimientos del padrón</option>
-                                <option value="berenjenas">🍆 Berenjenas fritas</option>
-                                <option value="chuletas">🥩 Chuletillas de cordero</option>
-                                <option value="albondigas">🧆 Albóndigas caseras</option>
-                                <option value="hamburguesa">🍔 Hamburguesa completa</option>
-                                <option value="churros">🥨 Churros o Porras</option>
-                            </select>
-                            <div class="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-slate-400">
-                                <i data-lucide="chevron-down" class="w-4 h-4"></i>
-                            </div>
-                        </div>
-
-                        <div class="grid grid-cols-2 gap-4">
-                            <div class="bg-slate-50 p-4 rounded-2xl border border-slate-100 text-center">
-                                <p class="text-[9px] text-slate-400 font-bold uppercase mb-1">Fritura Tradicional</p>
-                                <p id="aceite-tradicional"
-                                    class="text-lg font-black text-slate-400 italic leading-none">---</p>
-                            </div>
-                            <div class="bg-blue-50 p-4 rounded-2xl border border-blue-100 text-center">
-                                <p class="text-[9px] text-blue-400 font-bold uppercase mb-1">En Airfryer</p>
-                                <p id="aceite-airfryer" class="text-lg font-black text-blue-600 leading-none">---</p>
-                            </div>
-                        </div>
-
-                        <div
-                            class="bg-green-50 border border-green-100 p-5 rounded-3xl flex items-center justify-between shadow-sm">
-                            <div>
-                                <p class="text-[10px] text-green-600 font-black uppercase tracking-widest">Ahorro de
-                                    salud</p>
-                                <p id="calorias-ahorro" class="text-3xl font-black text-green-700 mt-1">-0 kcal</p>
-                                <p id="equivalencia-ejercicio" class="text-[10px] text-green-500 mt-2 font-bold italic">
-                                    Equivale a 0 min de carrera</p>
-                            </div>
-                            <div class="bg-white p-3 rounded-2xl text-green-500 shadow-sm border border-green-50">
-                                <i data-lucide="heart-pulse" class="w-8 h-8"></i>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10 animate-slide-up">
+            <div class="bg-white rounded-[3rem] p-10 shadow-xl border border-slate-100 relative overflow-hidden">
+                <div
+                    class="flex flex-col items-start mb-10 text-[10px] font-black uppercase tracking-widest text-slate-400">
+                    <span class="mb-2">Ahorro Eléctrico vs Horno</span>
+                    <div id="tiempo-tag" class="text-orange-600 italic text-left leading-tight text-xs"></div>
+                </div>
+                <div class="flex items-center gap-3 mb-6">
+                    <span id="ahorro-hoy-text" class="text-6xl font-[800] text-slate-900 tracking-tighter">0.00€</span>
+                    <span class="text-xl font-[800] text-green-500 uppercase italic">Hoy</span>
+                </div>
+                <div class="p-6 bg-orange-50 rounded-3xl border border-orange-100">
+                    <p class="text-[10px] uppercase font-black tracking-widest mb-1 text-orange-400">Estimación de
+                        Ahorro Anual</p>
+                    <p id="ahorro-ano-text" class="text-5xl font-[800] text-orange-600 tracking-tighter">0€</p>
+                </div>
+                <button onclick="compartirDinero()"
+                    class="w-full mt-8 bg-[#25D366] text-white font-black py-5 rounded-2xl flex items-center justify-center gap-3 shadow-lg shadow-green-100 transition-transform active:scale-95">
+                    <i data-lucide="message-circle" class="w-5 h-5"></i> Compartir ahorro
+                </button>
             </div>
 
-            <div class="space-y-8">
-
-                <section class="bg-white rounded-[2rem] p-8 shadow-md border border-slate-100 animate-fade-in"
-                    style="animation-delay: 0.2s;">
-                    <h2 class="text-xl font-bold text-slate-800 mb-6 flex items-center gap-2">
-                        <i data-lucide="list-checks" class="text-orange-500 w-5 h-5"></i> Guía Rápida de Tiempos
-                    </h2>
-                    <div id="lista-tiempos" class="space-y-1">
-                    </div>
-                </section>
-
-                <section
-                    class="bg-slate-900 rounded-[2rem] p-8 text-white shadow-xl animate-fade-in relative overflow-hidden"
-                    style="animation-delay: 0.3s;">
-                    <div class="absolute -right-4 -top-4 opacity-10">
-                        <i data-lucide="lightbulb" class="w-32 h-32"></i>
-                    </div>
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="bg-orange-500 p-2 rounded-xl shadow-lg shadow-orange-500/20">
-                            <i data-lucide="sparkles" class="w-5 h-5 text-white"></i>
-                        </div>
-                        <h3 class="font-bold text-lg">Truco del experto</h3>
-                    </div>
-                    <p id="tip-aceite-texto" class="text-slate-300 text-sm leading-relaxed italic font-medium">
-                        "Selecciona un alimento de la lista para ver el consejo de cocción perfecta."
-                    </p>
-                </section>
+            <div class="bg-white rounded-[3rem] p-10 shadow-xl border border-slate-100 relative overflow-hidden">
+                <div
+                    class="flex justify-between items-start mb-10 text-[10px] font-black uppercase tracking-widest text-slate-400">
+                    <span>Ahorro Salud (Sin Aceite)</span>
+                    <i data-lucide="heart" class="text-blue-500 w-5 h-5 fill-blue-500"></i>
+                </div>
+                <div class="flex items-center gap-3 mb-6">
+                    <span id="calorias-text" class="text-6xl font-[800] text-blue-600 tracking-tighter">-0</span>
+                    <span class="text-xl font-[800] text-blue-400 uppercase italic">Kcal</span>
+                </div>
+                <div class="p-6 bg-blue-50 rounded-3xl border border-blue-100">
+                    <p class="text-[10px] uppercase font-black tracking-widest mb-1 text-blue-400">Equivale a correr
+                        durante</p>
+                    <p id="ejercicio-text" class="text-5xl font-[800] text-blue-600 tracking-tighter">0 min</p>
+                </div>
+                <button onclick="compartirSalud()"
+                    class="w-full mt-8 bg-slate-900 text-white font-black py-5 rounded-2xl flex items-center justify-center gap-3 shadow-lg shadow-slate-200 transition-transform active:scale-95">
+                    <i data-lucide="flame" class="w-5 h-5 text-orange-400 fill-orange-400"></i> Compartir salud
+                </button>
             </div>
         </div>
 
-        <article class="mt-16 bg-white rounded-[2.5rem] p-10 border border-slate-100 shadow-sm animate-fade-in"
-            style="animation-delay: 0.4s;">
-            <h2
-                class="text-2xl font-black text-slate-900 mb-8 underline decoration-orange-500 decoration-4 underline-offset-8">
-                ¿Por qué usar una Airfryer ahorra de verdad?</h2>
-            <div class="grid md:grid-cols-2 gap-10 text-slate-600 leading-relaxed">
-                <div class="space-y-4">
-                    <p class="text-sm font-medium">No es solo una moda. La freidora de aire es un <strong>horno de
-                            convección optimizado</strong>. Al calentar un espacio más pequeño, el desperdicio de
-                        energía es mínimo en comparación con un horno de 60 litros convencional.</p>
-                    <div class="bg-slate-50 p-4 rounded-2xl border-l-4 border-orange-500">
-                        <p class="text-xs font-bold text-slate-700 uppercase mb-1 italic">Dato Técnico:</p>
-                        <p class="text-xs">Un horno gasta casi 15 minutos solo en precalentar. La Airfryer está lista en
-                            2 minutos. Ahí ya has ganado dinero.</p>
-                    </div>
-                </div>
-                <div class="space-y-4">
-                    <h3 class="font-bold text-slate-900 uppercase text-xs tracking-widest">Ventajas principales:</h3>
-                    <ul class="space-y-3">
-                        <li class="flex items-start gap-2 text-sm">
-                            <i data-lucide="check-circle-2" class="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0"></i>
-                            <span><strong>Eficiencia Energética:</strong> Hasta un 40% menos de consumo
-                                eléctrico.</span>
-                        </li>
-                        <li class="flex items-start gap-2 text-sm">
-                            <i data-lucide="check-circle-2" class="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0"></i>
-                            <span><strong>Salud Cardiovascular:</strong> Reducción drástica de grasas trans y
-                                saturadas.</span>
-                        </li>
-                        <li class="flex items-start gap-2 text-sm">
-                            <i data-lucide="check-circle-2" class="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0"></i>
-                            <span><strong>Rapidez:</strong> Menos tiempo en la cocina significa más tiempo para
-                                ti.</span>
-                        </li>
-                    </ul>
-                </div>
+        <section class="bg-slate-900 rounded-[2.5rem] p-8 text-white mb-12 shadow-2xl relative overflow-hidden">
+            <div class="relative z-10">
+                <h3 id="nombre-comida-truco"
+                    class="text-orange-400 font-black text-xs uppercase tracking-widest mb-3 italic">---</h3>
+                <p id="tip-texto" class="text-lg font-medium italic text-slate-200"></p>
+            </div>
+            <i data-lucide="sparkles" class="absolute right-6 top-6 w-12 h-12 text-white/10"></i>
+        </section>
+
+        <section id="tiempos" class="mb-16">
+            <h2 class="text-2xl font-[800] text-slate-900 mb-8 italic uppercase tracking-tight text-center">Guía Maestra
+                de Tiempos y Grados</h2>
+            <div id="guia-full" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4"></div>
+        </section>
+
+        <section id="blog" class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+            <div class="bg-orange-500 rounded-[2.5rem] p-8 text-white shadow-lg">
+                <i data-lucide="shield-check" class="w-8 h-8 mb-4"></i>
+                <h4 class="font-black uppercase text-sm mb-2 italic">Mantenimiento</h4>
+                <p class="text-xs font-medium leading-relaxed opacity-90 italic">Limpia la resistencia superior cada 3
+                    meses con un cepillo suave para evitar humos y mantener la eficiencia energética de tu freidora.</p>
+            </div>
+            <div class="bg-white rounded-[2.5rem] p-8 border border-slate-100 shadow-sm">
+                <i data-lucide="info" class="w-8 h-8 mb-4 text-orange-500"></i>
+                <h4 class="font-black uppercase text-sm mb-2 italic text-slate-800">Uso Seguro</h4>
+                <p class="text-xs font-medium leading-relaxed text-slate-500 italic">No pegues la Airfryer a la pared.
+                    Necesita al menos 15cm de espacio trasero para expulsar el aire caliente sin sobrecalentarse.</p>
+            </div>
+            <div class="bg-slate-800 rounded-[2.5rem] p-8 text-white shadow-lg">
+                <i data-lucide="timer" class="w-8 h-8 mb-4 text-orange-400"></i>
+                <h4 class="font-black uppercase text-sm mb-2 italic">Eficiencia</h4>
+                <p class="text-xs font-medium leading-relaxed opacity-90 italic">Si cocinas varias tandas seguidas, no
+                    necesitas precalentar después de la primera. Ahorrarás un 10% extra de luz por sesión.</p>
+            </div>
+        </section>
+
+        <article
+            class="bg-white rounded-[2.5rem] p-10 border border-slate-100 shadow-sm text-slate-600 text-sm leading-relaxed mb-12">
+            <h2 class="text-xl font-black text-slate-900 mb-4 italic uppercase tracking-tight">Manual de ahorro
+                Airfryer: Economía y Salud</h2>
+            <div class="grid md:grid-cols-2 gap-8 italic">
+                <p>El uso de la freidora de aire se ha consolidado como la mejor estrategia de ahorro doméstico en 2026.
+                    Frente a los hornos tradicionales, la tecnología de convección rápida permite cocinar platos en un
+                    50% menos de tiempo, lo que impacta directamente en la factura de la luz. Además, el nulo
+                    requerimiento de aceites vegetales reduce drásticamente la ingesta de grasas saturadas.</p>
+                <p>Nuestra calculadora de ahorro airfryer utiliza algoritmos basados en el precio medio del kWh y el
+                    gasto calórico por gramo de aceite evitado. Optimizar tu cocina no es solo una cuestión de moda,
+                    sino una decisión financiera inteligente para reducir el gasto mensual en suministros y mejorar el
+                    perfil lipídico de toda la familia.</p>
             </div>
         </article>
+
+        <section id="faq" class="mb-16 bg-white rounded-[3rem] p-8 md:p-12 border border-slate-100">
+            <h2 class="text-xl font-black text-slate-900 mb-8 italic uppercase tracking-tight text-center md:text-left">
+                Preguntas Frecuentes (FAQ)</h2>
+            <div class="space-y-4">
+                <details class="group p-4 border-b border-slate-100 cursor-pointer">
+                    <summary class="flex justify-between items-center font-bold text-slate-700">
+                        ¿Consume menos que un horno convencional?
+                        <i data-lucide="plus"
+                            class="w-5 h-5 text-orange-500 group-open:rotate-45 transition-transform"></i>
+                    </summary>
+                    <p class="mt-4 text-slate-500 text-sm italic leading-relaxed">Sí. Una Airfryer calienta un
+                        habitáculo mucho más pequeño y no requiere apenas precalentamiento. Esto supone un ahorro de luz
+                        de entre el 30% y el 50% dependiendo del plato.</p>
+                </details>
+                <details class="group p-4 border-b border-slate-100 cursor-pointer">
+                    <summary class="flex justify-between items-center font-bold text-slate-700">
+                        ¿Puedo usar papel de horno o moldes?
+                        <i data-lucide="plus"
+                            class="w-5 h-5 text-orange-500 group-open:rotate-45 transition-transform"></i>
+                    </summary>
+                    <p class="mt-4 text-slate-500 text-sm italic leading-relaxed">Sí, pero asegúrate de que el papel
+                        tenga agujeros para que el aire circule. Nunca pongas papel solo sin comida encima, ¡podría
+                        volar hacia la resistencia!</p>
+                </details>
+                <details class="group p-4 border-b border-slate-100 cursor-pointer">
+                    <summary class="flex justify-between items-center font-bold text-slate-700">
+                        ¿Cómo se calcula el ahorro de calorías?
+                        <i data-lucide="plus"
+                            class="w-5 h-5 text-orange-500 group-open:rotate-45 transition-transform"></i>
+                    </summary>
+                    <p class="mt-4 text-slate-500 text-sm italic leading-relaxed">Calculamos la diferencia entre la
+                        fritura tradicional y el aire caliente. Por cada cucharada de aceite evitada, restas unas
+                        120-130 kcal a tu plato.</p>
+                </details>
+                <details class="group p-4 border-b border-slate-100 cursor-pointer">
+                    <summary class="flex justify-between items-center font-bold text-slate-700">
+                        ¿Hay que darle la vuelta a la comida?
+                        <i data-lucide="plus"
+                            class="w-5 h-5 text-orange-500 group-open:rotate-45 transition-transform"></i>
+                    </summary>
+                    <p class="mt-4 text-slate-500 text-sm italic leading-relaxed">Es recomendable. Agitar el cesto a
+                        mitad de cocinado asegura que el aire caliente llegue a todas partes y el dorado sea uniforme.
+                    </p>
+                </details>
+            </div>
+        </section>
+
     </main>
 
-    <footer class="mt-12 py-12 border-t border-slate-100 bg-white text-center">
-        <p class="text-slate-400 text-xs font-bold uppercase tracking-[0.3em] mb-4">Airfryer Saver &copy; 2026</p>
-        <div class="flex justify-center gap-8 text-[10px] text-slate-400 font-black uppercase tracking-widest">
-            <button onclick="document.getElementById('modal-legal').classList.remove('hidden')"
-                class="hover:text-orange-500 transition-colors">Legal</button>
-            <button onclick="document.getElementById('modal-legal').classList.remove('hidden')"
-                class="hover:text-orange-500 transition-colors">Privacidad</button>
-            <a href="mailto:hola@airfryersaver.com" class="hover:text-orange-500 transition-colors">Contacto</a>
+    <footer class="py-16 bg-white border-t border-slate-200 text-center">
+        <div class="max-w-4xl mx-auto px-6">
+            <div
+                class="flex flex-wrap justify-center gap-x-10 gap-y-4 text-[11px] font-bold text-slate-400 uppercase tracking-widest mb-10">
+                <button onclick="showLegal('legal')" class="hover:text-orange-500 transition-colors">Aviso
+                    Legal</button>
+                <button onclick="showLegal('privacidad')"
+                    class="hover:text-orange-500 transition-colors">Privacidad</button>
+                <button onclick="showLegal('cookies')" class="hover:text-orange-500 transition-colors">Cookies</button>
+            </div>
+            <p class="text-slate-300 text-[9px] italic font-medium">© 2026 Airfryer Saver. Los cálculos son estimaciones
+                basadas en perfiles medios de consumo y nutrición.</p>
         </div>
     </footer>
 
-    <div id="modal-legal"
-        class="hidden fixed inset-0 bg-slate-900/80 backdrop-blur-md flex items-center justify-center p-4 z-[100]">
-        <div class="bg-white rounded-[2.5rem] p-10 max-w-2xl w-full max-h-[80vh] overflow-y-auto shadow-2xl">
-            <div class="flex justify-between items-start mb-8">
-                <h2 class="text-3xl font-black text-slate-900 italic uppercase">Transparencia</h2>
-                <button onclick="document.getElementById('modal-legal').classList.add('hidden')"
-                    class="bg-slate-100 p-2 rounded-full hover:bg-orange-100 transition-colors">
-                    <i data-lucide="x" class="text-slate-400"></i>
-                </button>
+    <div id="modal-container"
+        class="hidden fixed inset-0 bg-slate-900/90 backdrop-blur-md flex items-center justify-center p-6 z-[200]">
+        <div class="bg-white rounded-[3rem] p-10 max-w-2xl w-full max-h-[80vh] overflow-y-auto shadow-2xl">
+            <h2 id="modal-title" class="text-2xl font-black mb-6 uppercase text-slate-900 tracking-tight"></h2>
+            <div id="modal-body" class="text-slate-600 text-sm space-y-4 font-medium italic leading-relaxed text-left">
             </div>
-            <div class="text-slate-600 text-sm space-y-6 leading-relaxed">
-                <p><strong>Cálculos Eléctricos:</strong> Basados en potencia de 1.5kW (Airfryer) vs 2.5kW (Horno medio).
-                    Precio de luz fijado en 0.18€/kWh (mercado regulado medio).</p>
-                <p><strong>Cálculos de Aceite:</strong> Se asume que el alimento frito absorbe el 15% del volumen del
-                    aceite de la sartén. En Airfryer, el aceite usado se consume casi íntegramente.</p>
-                <p><strong>No somos médicos:</strong> Estos datos son estimaciones para ayudarte a ahorrar. Consulta con
-                    un nutricionista si quieres una dieta seria, cabronazo.</p>
-            </div>
-            <button onclick="document.getElementById('modal-legal').classList.add('hidden')"
-                class="mt-10 w-full bg-slate-900 text-white font-bold py-5 rounded-2xl hover:bg-orange-600 transition-all shadow-xl">Entendido</button>
+            <button onclick="closeLegal()"
+                class="w-full mt-10 bg-orange-500 text-white font-black py-4 rounded-2xl shadow-lg">Cerrar</button>
         </div>
     </div>
 
     <script>
         const datosAlimentos = {
-            patatas: { trad: 450, air: 15, temp: "200°C", tiempo: "18-20 min", tip: "Agita el cesto cada 5 minutos para un dorado uniforme." },
-            pollo: { trad: 180, air: 5, temp: "195°C", tiempo: "20-22 min", tip: "El pollo ya suelta su grasa; solo pincela la piel para que cruja." },
-            empanados: { trad: 350, air: 10, temp: "200°C", tiempo: "10-12 min", tip: "Pulveriza aceite en las zonas que se vean blancas de pan rallado." },
-            croquetas: { trad: 400, air: 10, temp: "200°C", tiempo: "8-10 min", tip: "Si son congeladas, dales una pincelada de aceite para que no se rajen." },
-            pescado: { trad: 150, air: 5, temp: "180°C", tiempo: "10-12 min", tip: "Usa un poco de papel de horno para que la piel no se pegue al fondo." },
-            verduras: { trad: 80, air: 10, temp: "180°C", tiempo: "15 min", tip: "Mézclalas con el aceite y especias en un bol antes de meterlas." },
-            pimientos: { trad: 120, air: 5, temp: "190°C", tiempo: "10 min", tip: "Echa sal gorda justo al sacarlos de la cesta. ¡Igual que fritos!" },
-            berenjenas: { trad: 500, air: 15, temp: "180°C", tiempo: "15-18 min", tip: "La berenjena es una esponja; en Airfryer ahorras más que con nada." },
-            chuletas: { trad: 100, air: 0, temp: "200°C", tiempo: "12 min", tip: "No hace falta nada de aceite, se cocinan de lujo en su propio jugo." },
-            albondigas: { trad: 200, air: 5, temp: "200°C", tiempo: "10 min", tip: "Quedan perfectas y redonditas sin necesidad de nadar en aceite." },
-            hamburguesa: { trad: 100, air: 0, temp: "200°C", tiempo: "8-12 min", tip: "A mitad de tiempo dales la vuelta para un sellado perfecto por ambos lados." },
-            churros: { trad: 600, air: 10, temp: "200°C", tiempo: "8 min", tip: "Pulveriza aceite generosamente para evitar el sabor a masa cruda." }
+            alcachofas: { icono: "🥦", nombre: "Alcachofas", trad: 50, air: 0, temp: "180°C", tiempo: "15", tip: "Añade limón para evitar la oxidación." },
+            albondigas: { icono: "🧆", nombre: "Albóndigas", trad: 200, air: 5, temp: "200°C", tiempo: "12", tip: "Dales la vuelta a mitad de tiempo." },
+            alitas: { icono: "🍗", nombre: "Alitas de Pollo", trad: 180, air: 5, temp: "195°C", tiempo: "22", tip: "Piel hacia arriba para máximo crujido." },
+            bacalao: { icono: "🐟", nombre: "Bacalao Rebozado", trad: 300, air: 10, temp: "190°C", tiempo: "12", tip: "Pincela con un poco de aceite el rebozado." },
+            berenjenas: { icono: "🍆", nombre: "Berenjenas", trad: 500, air: 15, temp: "185°C", tiempo: "15", tip: "En bastones quedan como snacks saludables." },
+            boniato: { icono: "🍠", nombre: "Boniato", trad: 300, air: 10, temp: "200°C", tiempo: "18", tip: "Mucho más rápido que en el horno." },
+            castanas: { icono: "🌰", nombre: "Castañas", trad: 50, air: 0, temp: "200°C", tiempo: "15", tip: "Corte profundo para pelarlas fácil." },
+            champiñones: { icono: "🍄", nombre: "Champiñones", trad: 40, air: 5, temp: "180°C", tiempo: "10", tip: "Prueba a rellenarlos con jamón." },
+            chuletas: { icono: "🥩", nombre: "Chuletillas", trad: 100, air: 0, temp: "200°C", tiempo: "12", tip: "El sabor de la brasa sin humos." },
+            churros: { icono: "🥨", nombre: "Churros", trad: 600, air: 10, temp: "200°C", tiempo: "8", tip: "Imprescindible spray de aceite." },
+            croquetas: { icono: "🧆", nombre: "Croquetas", trad: 400, air: 10, temp: "200°C", tiempo: "10", tip: "Congeladas: no amontonar jamás." },
+            empanados: { icono: "🍤", nombre: "Nuggets / San Jacobos", trad: 350, air: 10, temp: "200°C", tiempo: "12", tip: "Deja espacio entre piezas." },
+            esparragos: { icono: "🎋", nombre: "Espárragos", trad: 30, air: 5, temp: "185°C", tiempo: "8", tip: "Un toque de ajo en polvo y listos." },
+            falafel: { icono: "🧆", nombre: "Falafel", trad: 250, air: 10, temp: "190°C", tiempo: "12", tip: "Pincela para que no se quiebre el exterior." },
+            gambas: { icono: "🍤", nombre: "Gambas / Langostinos", trad: 80, air: 5, temp: "190°C", tiempo: "6", tip: "Con sal gorda y ajo quedan brutales." },
+            hamburguesa: { icono: "🍔", nombre: "Hamburguesa", trad: 100, air: 0, temp: "200°C", tiempo: "10", tip: "Punto medio: unos 8-9 minutos." },
+            pan: { icono: "🥖", nombre: "Pan / Tostadas", trad: 50, air: 0, temp: "180°C", tiempo: "4", tip: "Perfecto para revivir pan del día anterior." },
+            patatas: { icono: "🍟", nombre: "Patatas Fritas", trad: 450, air: 15, temp: "200°C", tiempo: "20", tip: "Lávalas para quitar el almidón." },
+            pescado: { icono: "🐟", nombre: "Lomos de Pescado", trad: 150, air: 5, temp: "180°C", tiempo: "12", tip: "Usa papel de horno para no ensuciar." },
+            pimientos: { icono: "🫑", nombre: "Pimientos Padrón", trad: 120, air: 5, temp: "190°C", tiempo: "10", tip: "Sal gorda al sacarlos, siempre." },
+            pizza: { icono: "🍕", nombre: "Recalentar Pizza", trad: 200, air: 0, temp: "190°C", tiempo: "8", tip: "La base queda crujiente de nuevo." },
+            platano: { icono: "🍌", nombre: "Plátano Chips", trad: 200, air: 5, temp: "180°C", tiempo: "10", tip: "Corte muy fino y spray de aceite." },
+            salmon: { icono: "🐟", nombre: "Salmón", trad: 120, air: 0, temp: "180°C", tiempo: "12", tip: "Piel hacia abajo, carne jugosa." },
+            tofu: { icono: "🧱", nombre: "Tofu", trad: 150, air: 5, temp: "200°C", tiempo: "15", tip: "Sécalo bien con papel antes de cocinar." },
+            verduras: { icono: "🥦", nombre: "Verduras Mix", trad: 80, air: 10, temp: "185°C", tiempo: "15", tip: "Corte uniforme para el mismo punto." }
         };
 
-        function calcular() {
-            const min = document.getElementById('minutos').value;
-            const precioLuz = 0.18;
-            if (!min || min <= 0) {
-                document.getElementById('resultado').innerHTML = '<div class="text-center p-6 border-2 border-dashed border-slate-100 rounded-3xl"><p class="text-slate-300 text-sm font-medium italic">Escribe los minutos para ver el ahorro...</p></div>';
-                document.getElementById('share-container').classList.add('hidden');
-                return;
-            }
+        const legalTexts = {
+            legal: { title: "Aviso Legal", body: "Sitio informativo propiedad de Airfryer Saver. Los cálculos mostrados son estimaciones basadas en el precio medio del mercado eléctrico español en 2026 y tablas nutricionales estándar." },
+            privacidad: { title: "Privacidad", body: "Respetamos tu privacidad. No almacenamos datos personales. Google Adsense puede utilizar cookies para personalizar los anuncios que ves." },
+            cookies: { title: "Política de Cookies", body: "Utilizamos cookies para mejorar la experiencia de usuario y analizar el tráfico. Puedes gestionar el uso de cookies en la configuración de tu navegador." }
+        };
 
-            const consAir = (1.5 * (min / 60)) * precioLuz;
-            const consHorno = (2.5 * (min / 60)) * precioLuz;
-            const ahorroHoy = consHorno - consAir;
-            const ahorroMes = ahorroHoy * 16;
-            const ahorroAno = ahorroHoy * 192;
-            const movilesCargados = Math.round((ahorroHoy / 0.01));
+        let comidaActual = "patatas";
+        let ahorroGlobalHoy = 0, ahorroGlobalAno = 0, caloriasGlobal = 0;
 
-            document.getElementById('resultado').innerHTML = `
-                <div class="bg-white border-2 border-orange-100 p-6 rounded-3xl animate-fade-in shadow-lg space-y-6">
-                    <div class="flex items-center justify-between">
-                        <div>
-                            <p class="text-slate-500 font-bold text-[10px] uppercase tracking-widest mb-1 text-left">Ahorro hoy</p>
-                            <div class="flex items-baseline gap-2">
-                                <span class="text-4xl font-black text-slate-900">${ahorroHoy.toFixed(2)}€</span>
-                                <span class="text-green-600 font-bold text-xs flex items-center gap-1">
-                                    <i data-lucide="trending-down" class="w-3 h-3"></i> -40% LUZ
-                                </span>
-                            </div>
-                        </div>
-                        <div class="bg-orange-100 p-3 rounded-2xl text-orange-600 shadow-inner">
-                            <i data-lucide="zap" class="w-6 h-6"></i>
-                        </div>
-                    </div>
+        function actualizarTodo() {
+            const key = document.getElementById('alimento-principal').value;
+            const d = datosAlimentos[key];
+            if (!d) return;
+            comidaActual = d.nombre;
+            document.getElementById('nombre-comida-truco').innerText = `CONSEJO PARA ${d.nombre.toUpperCase()}`;
+            document.getElementById('tiempo-tag').innerHTML = `${d.tiempo} minutos a ${d.temp}`;
 
-                    <div class="bg-slate-50 p-3 rounded-xl flex items-center gap-3 border border-slate-100">
-                        <div class="bg-white p-2 rounded-lg shadow-sm text-green-500">
-                            <i data-lucide="battery-charging" class="w-4 h-4"></i>
-                        </div>
-                        <p class="text-[11px] text-slate-600 leading-tight">
-                            Podrías cargar tu móvil <span class="font-bold text-slate-900">${movilesCargados} veces</span> con lo que ahorras.
-                        </p>
-                    </div>
-
-                    <div class="grid grid-cols-2 gap-4 pt-4 border-t border-slate-100">
-                        <div class="text-left">
-                            <p class="text-[9px] text-slate-400 font-bold uppercase mb-1">Al mes</p>
-                            <p class="text-xl font-black text-slate-700">~${ahorroMes.toFixed(2)}€</p>
-                        </div>
-                        <div class="text-right">
-                            <p class="text-[9px] text-slate-400 font-bold uppercase mb-1">Al año</p>
-                            <p class="text-xl font-black text-orange-600">~${ahorroAno.toFixed(2)}€</p>
-                        </div>
-                    </div>
-                </div>
-            `;
-            document.getElementById('share-container').classList.remove('hidden');
-            lucide.createIcons();
+            const ahorroHoy = ((2.5 - 1.5) * (d.tiempo / 60)) * 0.18;
+            ahorroGlobalHoy = ahorroHoy.toFixed(2);
+            ahorroGlobalAno = (ahorroHoy * 192).toFixed(2);
+            caloriasGlobal = Math.max(0, Math.round(((d.trad * 0.15) - d.air) * 9));
+            document.getElementById('ahorro-hoy-text').innerText = `${ahorroGlobalHoy}€`;
+            document.getElementById('ahorro-ano-text').innerText = `${ahorroGlobalAno}€`;
+            document.getElementById('calorias-text').innerText = `-${caloriasGlobal}`;
+            document.getElementById('ejercicio-text').innerText = `${Math.round(caloriasGlobal / 10)} min`;
+            document.getElementById('tip-texto').innerText = d.tip;
         }
 
-        function actualizarAceite() {
-            const sel = document.getElementById('alimento-aceite').value;
-            const d = datosAlimentos[sel];
-
-            // Lógica de absorción realista (15% en tradicional vs total en airfryer)
-            const ahorroKcal = Math.max(0, Math.round(((d.trad * 0.15) - d.air) * 9));
-            const minEx = Math.round(ahorroKcal / 10);
-
-            document.getElementById('aceite-tradicional').innerText = d.trad + "ml";
-            document.getElementById('aceite-airfryer').innerText = d.air + "ml";
-            document.getElementById('calorias-ahorro').innerText = `-${ahorroKcal} kcal`;
-            document.getElementById('equivalencia-ejercicio').innerText = `Equivale a dejar de correr unos ${minEx} min`;
-            document.getElementById('tip-aceite-texto').innerText = d.tip;
-
-            // Rellenar calculadora y disparar cálculo
-            document.getElementById('minutos').value = parseInt(d.tiempo.split('-')[0]);
-            calcular();
-            lucide.createIcons();
+        function seleccionarGuia(key) {
+            document.getElementById('alimento-principal').value = key;
+            actualizarTodo();
+            document.getElementById('calculadora').scrollIntoView({ behavior: 'smooth' });
         }
 
-        function seleccionarAlimento(key) {
-            const selector = document.getElementById('alimento-aceite');
-            selector.value = key;
-            actualizarAceite();
-
-            // Scroll suave hacia arriba para ver el cambio
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+        function showLegal(type) {
+            document.getElementById('modal-title').innerText = legalTexts[type].title;
+            document.getElementById('modal-body').innerText = legalTexts[type].body;
+            document.getElementById('modal-container').classList.remove('hidden');
         }
 
-        function cargarTiempos() {
-            const contenedor = document.getElementById('lista-tiempos');
-            contenedor.innerHTML = '';
-            Object.keys(datosAlimentos).forEach(key => {
-                const al = datosAlimentos[key];
-                const iconoNombre = document.querySelector(`#alimento-aceite option[value="${key}"]`).text;
-
-                contenedor.innerHTML += `
-                    <div onclick="seleccionarAlimento('${key}')" class="flex justify-between py-3 px-4 border-b border-slate-50 items-center hover:bg-orange-50 cursor-pointer rounded-2xl transition-all group">
-                        <span class="text-slate-700 font-medium group-hover:text-orange-600 transition-colors text-sm">${iconoNombre}</span>
-                        <div class="text-right">
-                            <p class="font-bold text-slate-900 leading-none">${al.tiempo}</p>
-                            <p class="text-[10px] text-slate-400 font-bold uppercase mt-1">${al.temp}</p>
-                        </div>
-                    </div>
-                `;
-            });
-        }
-
-        function compartirWhatsApp() {
-            // Pillamos la URL actual de la página dinámicamente
-            const urlWeb = window.location.href;
-            const texto = `¡Oye! He encontrado esta calculadora y es la hostia. Ahorro un 40% de luz cada vez que uso la Airfryer y cientos de calorías. ¡Calcula el tuyo aquí! 👇\n\n${urlWeb}`;
-
-            window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(texto)}`, '_blank');
-        }
+        function closeLegal() { document.getElementById('modal-container').classList.add('hidden'); }
 
         window.onload = () => {
-            cargarTiempos();
+            const sel = document.getElementById('alimento-principal');
+            const cont = document.getElementById('guia-full');
+            const claves = Object.keys(datosAlimentos).sort();
+            claves.forEach(k => {
+                const a = datosAlimentos[k];
+                sel.innerHTML += `<option value="${k}">${a.icono} ${a.nombre}</option>`;
+                cont.innerHTML += `<div onclick="seleccionarGuia('${k}')" class="p-4 bg-white rounded-3xl text-center border border-slate-100 hover:border-orange-400 hover:shadow-lg transition-all cursor-pointer shadow-sm"><p class="text-2xl mb-2">${a.icono}</p><p class="text-[9px] font-black text-slate-400 uppercase mb-2 tracking-tighter">${a.nombre}</p><p class="text-[10px] font-bold text-slate-800">${a.tiempo}' a ${a.temp}</p></div>`;
+            });
+            sel.value = "patatas";
+            actualizarTodo();
             lucide.createIcons();
         };
+
+        function compartirDinero() {
+            const t = `¡Brutal! Ahorro ${ahorroGlobalHoy}€ con ${comidaActual} en mi Airfryer (${ahorroGlobalAno}€/año). 💸 Míralo aquí:\n${window.location.href}`;
+            window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(t)}`, '_blank');
+        }
+
+        function compartirSalud() {
+            const t = `¡Mira! Ahorro ${caloriasGlobal} kcal haciendo ${comidaActual} en Airfryer (equivalente a correr ${Math.round(caloriasGlobal / 10)} min). 🍗🥗 Calcula el tuyo:\n${window.location.href}`;
+            window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(t)}`, '_blank');
+        }
     </script>
 </body>
 
