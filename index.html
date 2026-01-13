@@ -97,9 +97,7 @@
             <div class="relative inline-block text-left" id="custom-select-container">
                 <button onclick="toggleLangMenu()" id="lang-btn"
                     class="bg-slate-100 border-none text-base p-3 rounded-xl focus:outline-none cursor-pointer shadow-sm font-bold min-w-[120px] flex items-center justify-between gap-2">
-                    <span id="lang-selected" class="flex items-center gap-2">
-                        <img src="https://flagcdn.com/w20/es.png" width="20" alt="ES"> ES
-                    </span>
+                    <span id="lang-selected" class="flex items-center gap-2"></span>
                     <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400"></i>
                 </button>
 
@@ -117,7 +115,7 @@
                         class="px-4 py-3 hover:bg-orange-50 cursor-pointer flex items-center gap-3 font-bold text-slate-700">
                         <img src="https://flagcdn.com/w20/gb.png" width="20"> English
                     </div>
-                    <div onclick="selectLang('fr')"
+                    <div onclick="selectLang('fr', 'fr')"
                         class="px-4 py-3 hover:bg-orange-50 cursor-pointer flex items-center gap-3 font-bold text-slate-700">
                         <img src="https://flagcdn.com/w20/fr.png" width="20"> Français
                     </div>
@@ -125,7 +123,7 @@
                         class="px-4 py-3 hover:bg-orange-50 cursor-pointer flex items-center gap-3 font-bold text-slate-700">
                         <img src="https://flagcdn.com/w20/it.png" width="20"> Italiano
                     </div>
-                    <div onclick="selectLang('de')"
+                    <div onclick="selectLang('de', 'de')"
                         class="px-4 py-3 hover:bg-orange-50 cursor-pointer flex items-center gap-3 font-bold text-slate-700">
                         <img src="https://flagcdn.com/w20/de.png" width="20"> Deutsch
                     </div>
@@ -249,6 +247,26 @@
             <button id="btn-f-cook" onclick="showLegal('cookies')">Cookies</button>
         </div>
         <p class="text-[9px] italic font-medium">© 2026 Airfryer Saver International.</p>
+
+
+        <div id="cookie-banner"
+            class="fixed bottom-0 left-0 w-full bg-slate-900 text-white p-6 z-[300] transform translate-y-full transition-transform duration-500 shadow-2xl">
+            <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+                <div class="text-sm opacity-90 text-center md:text-left italic">
+                    <p>🍪 <span id="cookie-text-val">Usamos cookies para que ahorres más y veas anuncios que te
+                            gusten.</span>
+                    </p>
+                </div>
+                <div class="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
+                    <button onclick="aceptarCookies()" id="btn-cookie-accept"
+                        class="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-xl font-bold text-sm transition-all shadow-lg shadow-orange-900/20 whitespace-nowrap">
+                    </button>
+                    <button onclick="cerrarBanner()" id="btn-cookie-close"
+                        class="bg-slate-700 hover:bg-slate-600 text-white px-8 py-3 rounded-xl font-bold text-sm transition-all tracking-wider whitespace-nowrap">
+                    </button>
+                </div>
+            </div>
+        </div>
     </footer>
 
     <div id="modal-container"
@@ -261,6 +279,7 @@
         </div>
     </div>
 
+    <script src="constants.js"></script>
     <script src="articles.js"></script>
     <script src="script.js"></script>
 </body>
