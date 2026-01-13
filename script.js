@@ -253,7 +253,7 @@ const foodData = {
     },
     trad: 450,
     air: 15,
-    temp: "200°C",
+    temp: "200",
     tiempo: "20",
     tips: {
       es: "Lávalas antes para quitar el almidón y conseguir que queden extra crujientes.",
@@ -274,7 +274,7 @@ const foodData = {
     },
     trad: 180,
     air: 5,
-    temp: "195°C",
+    temp: "195",
     tiempo: "22",
     tips: {
       es: "Colócalas con la piel hacia arriba para que la grasa se drene perfectamente.",
@@ -295,7 +295,7 @@ const foodData = {
     },
     trad: 120,
     air: 0,
-    temp: "180°C",
+    temp: "180",
     tiempo: "12",
     tips: {
       es: "Piel hacia abajo, no necesita nada de aceite adicional.",
@@ -316,7 +316,7 @@ const foodData = {
     },
     trad: 400,
     air: 10,
-    temp: "200°C",
+    temp: "200",
     tiempo: "10",
     tips: {
       es: "Si son congeladas, pulveriza un toque de aceite para un dorado óptimo.",
@@ -337,7 +337,7 @@ const foodData = {
     },
     trad: 80,
     air: 0,
-    temp: "180°C",
+    temp: "180",
     tiempo: "4",
     tips: {
       es: "Recupera el crujiente original mucho mejor que el microondas.",
@@ -358,7 +358,7 @@ const foodData = {
     },
     trad: 150,
     air: 0,
-    temp: "190°C",
+    temp: "190",
     tiempo: "8",
     tips: {
       es: "Pon un trozo de pan debajo para absorber la grasa y evitar humos.",
@@ -379,7 +379,7 @@ const foodData = {
     },
     trad: 50,
     air: 5,
-    temp: "185°C",
+    temp: "185",
     tiempo: "8",
     tips: {
       es: "Queda con una textura tostada increíble. Añade especias al final.",
@@ -400,7 +400,7 @@ const foodData = {
     },
     trad: 350,
     air: 10,
-    temp: "200°C",
+    temp: "200",
     tiempo: "12",
     tips: {
       es: "Agita el cesto a mitad de tiempo para un dorado uniforme.",
@@ -421,7 +421,7 @@ const foodData = {
     },
     trad: 200,
     air: 10,
-    temp: "200°C",
+    temp: "200",
     tiempo: "10",
     tips: {
       es: "Precalienta la freidora 5 minutos para sellar bien la carne.",
@@ -442,7 +442,7 @@ const foodData = {
     },
     trad: 100,
     air: 0,
-    temp: "160°C",
+    temp: "160",
     tiempo: "8",
     tips: {
       es: "Vigílalas bien, se tuestan en un abrir y cerrar de ojos.",
@@ -463,7 +463,7 @@ const foodData = {
     },
     trad: 180,
     air: 15,
-    temp: "190°C",
+    temp: "190",
     tiempo: "12",
     tips: {
       es: "Pulveriza aceite para que queden jugosas por dentro.",
@@ -484,7 +484,7 @@ const foodData = {
     },
     trad: 40,
     air: 5,
-    temp: "190°C",
+    temp: "190",
     tiempo: "8",
     tips: {
       es: "Corta la base dura y añade sal gorda al final.",
@@ -505,7 +505,7 @@ const foodData = {
     },
     trad: 40,
     air: 5,
-    temp: "180°C",
+    temp: "180",
     tiempo: "15",
     tips: {
       es: "Perfectos para asar. Si los quieres pelar, mételos en una bolsa.",
@@ -526,7 +526,7 @@ const foodData = {
     },
     trad: 30,
     air: 0,
-    temp: "200°C",
+    temp: "200",
     tiempo: "4",
     tips: {
       es: "Cuidado, el aire puede mover las rebanadas muy finas.",
@@ -547,7 +547,7 @@ const foodData = {
     },
     trad: 100,
     air: 5,
-    temp: "190°C",
+    temp: "190",
     tiempo: "6",
     tips: {
       es: "Cocción ultra rápida. No te pases de tiempo.",
@@ -562,7 +562,7 @@ const foodData = {
     nombres: { es: "Tofu", en: "Tofu", fr: "Tofu", it: "Tofu", de: "Tofu" },
     trad: 120,
     air: 5,
-    temp: "190°C",
+    temp: "190",
     tiempo: "15",
     tips: {
       es: "Sécalo muy bien con papel de cocina antes de meterlo.",
@@ -583,7 +583,7 @@ const foodData = {
     },
     trad: 60,
     air: 0,
-    temp: "150°C",
+    temp: "150",
     tiempo: "15",
     tips: {
       es: "Corta láminas casi transparentes para un snack sano.",
@@ -598,7 +598,7 @@ const foodData = {
     nombres: { es: "Mazorca", en: "Corn", fr: "Maïs", it: "Mais", de: "Mais" },
     trad: 150,
     air: 10,
-    temp: "190°C",
+    temp: "190",
     tiempo: "12",
     tips: {
       es: "Úntala con mantequilla y sal antes de empezar.",
@@ -619,7 +619,7 @@ const foodData = {
     },
     trad: 180,
     air: 0,
-    temp: "200°C",
+    temp: "200",
     tiempo: "15",
     tips: {
       es: "Hazles un corte profundo en cruz para que no exploten.",
@@ -640,7 +640,7 @@ const foodData = {
     },
     trad: 300,
     air: 5,
-    temp: "160°C",
+    temp: "160",
     tiempo: "25",
     tips: {
       es: "Usa un molde adecuado y deja espacio para que suba.",
@@ -661,7 +661,7 @@ const foodData = {
     },
     trad: 250,
     air: 10,
-    temp: "180°C",
+    temp: "180",
     tiempo: "10",
     tips: {
       es: "Pínchalas con un tenedor para que suelten la grasa.",
@@ -682,7 +682,7 @@ const foodData = {
     },
     trad: 400,
     air: 15,
-    temp: "175°C",
+    temp: "175",
     tiempo: "8",
     tips: {
       es: "Pincela con un poco de leche para un acabado dorado.",
@@ -703,7 +703,7 @@ const foodData = {
     },
     trad: 80,
     air: 5,
-    temp: "190°C",
+    temp: "190",
     tiempo: "15",
     tips: {
       es: "Sálalas 10 min antes para que pierdan el amargor.",
@@ -724,7 +724,7 @@ const foodData = {
     },
     trad: 250,
     air: 0,
-    temp: "180°C",
+    temp: "180",
     tiempo: "10",
     tips: {
       es: "Ideal para dipear. Hazle unos cortes arriba.",
@@ -745,7 +745,7 @@ const foodData = {
     },
     trad: 40,
     air: 5,
-    temp: "180°C",
+    temp: "180",
     tiempo: "10",
     tips: {
       es: "Rellénalos con ajo y perejil para un sabor explosivo.",
@@ -851,7 +851,7 @@ function changeLanguage(lang) {
             }</p>
             <p class="text-[10px] font-bold text-slate-800">${
               foodData[k].tiempo
-            }' - ${foodData[k].temp}</p>
+            }' - ${formatearTemp(foodData[k].temp)}</p>
         </div>`
     )
     .join("");
@@ -889,7 +889,7 @@ function changeLanguage(lang) {
 }
 
 function actualizarTodo() {
-  // 1. Pillamos el precio de la luz (con paracaídas por si el input no existe)
+  // 1. Pillamos el precio de la luz
   const inputElec = document.getElementById("elec-price");
   const elecPrice = inputElec ? parseFloat(inputElec.value) || 0.2 : 0.2;
 
@@ -901,35 +901,33 @@ function actualizarTodo() {
   const food = foodData[foodKey];
   if (!food) return;
 
-  // 3. CONVERSIÓN FORZADA A NÚMERO (Aquí está la magia, cabronazo)
-  // Usamos tus nombres originales: 'trad' para horno y 'tiempo' para airfryer
+  // 3. CONVERSIÓN Y CÁLCULOS
   let tiempoHorno = parseFloat(food.trad) || 0;
-  // Si el tiempo es mayor de 120 min, asumimos que es un error y dividimos por 10
   if (tiempoHorno > 120) tiempoHorno = tiempoHorno / 10;
-
   let tiempoAir = parseFloat(food.tiempo) || 0;
   const ahorroGrasa = parseFloat(food.air) || 0;
 
-  // 4. CÁLCULOS REALISTAS
-  // Un horno gasta unos 2.2kW pero el termostato solo actúa el 60% del tiempo
   const consumoHorno = 2.2 * (tiempoHorno / 60) * 0.6;
-  // Una Airfryer gasta 1.5kW y el termostato actúa el 70% del tiempo
   const consumoAir = 1.5 * (tiempoAir / 60) * 0.7;
 
-  const costoHorno = consumoHorno * elecPrice;
-  const costoAir = consumoAir * elecPrice;
-
-  const ahorroHoy = Math.max(0, costoHorno - costoAir);
-
-  // Estimación: 2 veces por semana (104 veces al año)
-  // Antes tenías 52 * 3 = 156 veces, por eso salía tan alto
+  const ahorroHoy = Math.max(
+    0,
+    consumoHorno * elecPrice - consumoAir * elecPrice
+  );
   const ahorroAnual = ahorroHoy * 104;
-
-  // Calculamos ahorro calórico: 1g aceite = 9kcal.
-  // Estimamos que en horno/sartén se usan 15g más que en airfryer.
   const ahorroCal = ahorroGrasa * 9 + 100;
 
-  // 5. INYECCIÓN EN EL HTML (Asegurando IDs)
+  // 4. TRADUCCIONES RÁPIDAS PARA EL TAG
+  const dict = {
+    es: { horno: "HORNO", airfryer: "AIRFRYER", temp: "TEMP" },
+    en: { horno: "OVEN", airfryer: "AIR FRYER", temp: "TEMP" },
+    fr: { horno: "FOUR", airfryer: "FRITEUSE", temp: "TEMP" },
+    it: { horno: "FORNO", airfryer: "FRIGGITRICE", temp: "TEMP" },
+    de: { horno: "OFEN", airfryer: "HEISSLUFTFRITTEUSE", temp: "TEMP" },
+  };
+  const t = dict[currentLang] || dict["es"];
+
+  // 5. INYECCIÓN DE ESTADÍSTICAS
   const hHoy = document.getElementById("ahorro-hoy-text");
   const hAno = document.getElementById("ahorro-ano-text");
   const hCal = document.getElementById("calorias-text");
@@ -940,22 +938,34 @@ function actualizarTodo() {
   if (hCal) hCal.innerText = "-" + Math.round(ahorroCal);
   if (hEjer) hEjer.innerText = Math.round(ahorroCal / 8) + " min";
 
-  // 6. ACTUALIZAR EL CONSEJO (TIP)
+  // 6. RELLENAR EL TIEMPO-TAG TRADUCIDO
+  const tiempoTag = document.getElementById("tiempo-tag");
+  if (tiempoTag) {
+    const temperaturaLabel =
+      typeof formatearTemp === "function"
+        ? formatearTemp(food.temp)
+        : food.temp;
+    tiempoTag.innerHTML = `
+          <span class="font-black">⚡ ${Math.round(tiempoHorno)}min ${
+      t.horno
+    } vs ${Math.round(tiempoAir)}min ${t.airfryer}</span>
+          <br>
+          <span class="text-[10px] text-orange-400 font-bold uppercase">🔥 ${
+            t.temp
+          }: ${temperaturaLabel}</span>
+      `;
+  }
+
+  // 7. ACTUALIZAR EL CONSEJO (TIP) Y NOMBRE
   const tituloTip = document.getElementById("nombre-comida-truco");
   const textoTip = document.getElementById("tip-texto");
 
-  if (food) {
-    // 1. Ponemos el nombre del alimento en el título naranja (quitando el ---)
-    if (tituloTip) {
-      const nombreAlimento = food.nombres[currentLang] || food.nombres["es"];
-      tituloTip.innerText = nombreAlimento;
-    }
-
-    // 2. Ponemos el consejo real en el párrafo de abajo
-    if (textoTip) {
-      const consejo = food.tips[currentLang] || food.tips["es"] || "¡Disfruta!";
-      textoTip.innerText = `"${consejo}"`; // Le pongo comillas para que quede más pro
-    }
+  if (tituloTip) {
+    tituloTip.innerText = food.nombres[currentLang] || food.nombres["es"];
+  }
+  if (textoTip) {
+    const consejo = food.tips[currentLang] || food.tips["es"] || "¡Disfruta!";
+    textoTip.innerText = `"${consejo}"`;
   }
 }
 
@@ -1108,3 +1118,16 @@ window.onload = function () {
     actualizarTodo();
   }, 100);
 };
+
+function formatearTemp(tempCelsius) {
+  // Quitamos el "°C" y lo pasamos a número
+  const celsius = parseFloat(tempCelsius);
+
+  if (currentLang === "en") {
+    // Fórmula: (C * 1.8) + 32
+    const fahrenheit = Math.round(celsius * 1.8 + 32);
+    return fahrenheit + "°F";
+  }
+
+  return celsius + "°C";
+}
