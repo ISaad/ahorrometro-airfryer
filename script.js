@@ -49,11 +49,11 @@ function changeLanguage(lang) {
   document.getElementById("guia-full").innerHTML = Object.keys(FOOD_DATA)
     .map(
       (k) => `
-        <div onclick="seleccionarGuia('${k}')" class="p-4 bg-white rounded-3xl text-center border border-slate-100 hover:border-orange-400 transition-all cursor-pointer shadow-sm">
-            <p class="text-2xl mb-2">${FOOD_DATA[k].icono}</p>
-            <p class="text-[9px] font-black text-slate-400 uppercase mb-2">${FOOD_DATA[k].nombres[lang] || FOOD_DATA[k].nombres["es"]
+        <div onclick="seleccionarGuia('${k}')" class="guide-card">
+            <p class="guide-icon">${FOOD_DATA[k].icono}</p>
+            <p class="guide-name">${FOOD_DATA[k].nombres[lang] || FOOD_DATA[k].nombres["es"]
         }</p>
-            <p class="text-[10px] font-bold text-slate-800">${FOOD_DATA[k].tiempo
+            <p class="guide-time">${FOOD_DATA[k].air_min
         }' - ${formatearTemp(FOOD_DATA[k].temp)}</p>
         </div>`
     )
@@ -64,15 +64,18 @@ function changeLanguage(lang) {
   document.getElementById("faq-container").innerHTML = fData
     .map(
       (f) => `
-        <details class="group p-4 border-b border-slate-100 cursor-pointer">
-            <summary class="flex justify-between items-center font-bold text-slate-700">${f.q}<i data-lucide="plus" class="w-5 h-5 text-orange-500 group-open:rotate-45 transition-transform"></i></summary>
-            <p class="mt-4 text-slate-500 text-sm italic leading-relaxed">${f.a}</p>
+        <details class="faq-item">
+            <summary class="faq-summary">${f.q}
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="faq-icon"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
+            </summary>
+            <p class="faq-answer">${f.a}</p>
         </details>`
     )
     .join("");
 
   actualizarTodo();
-  if (window.lucide) lucide.createIcons();
+  actualizarTodo();
+  // if (window.lucide) lucide.createIcons(); // Removed Lucide usage
 
   // Inject SEO Articles
   const articles = ARTICLES_DATA[lang] || ARTICLES_DATA["es"];
@@ -81,9 +84,9 @@ function changeLanguage(lang) {
     container.innerHTML = articles
       .map(
         (art) => `
-            <div class="bg-white p-6 rounded-3xl border border-slate-100 shadow-sm">
-                <h3 class="text-lg font-black text-slate-800 mb-3">${art.t}</h3>
-                <p class="text-slate-500 text-sm leading-relaxed">${art.p}</p>
+            <div class="article-card">
+                <h3 class="text-lg font-black" style="color: var(--slate-800); margin-bottom: 0.75rem;">${art.t}</h3>
+                <p style="color: var(--slate-500); font-size: 0.875rem; line-height: 1.6;">${art.p}</p>
             </div>
         `
       )
@@ -105,17 +108,19 @@ function actualizarTodo() {
   if (!food) return;
 
   // 3. CONVERSION AND CALCULATIONS
-  let tiempoHorno = parseFloat(food.trad) || 0;
-  // If food.trad is > 120 (likely calories instead of time), convert to minutes for calculation
-  if (tiempoHorno > 120) tiempoHorno = tiempoHorno / 10;
+  // Using explicit fields from new dataset
+  const tiempoHorno = parseFloat(food.trad_min) || 0;
+  const tiempoAir = parseFloat(food.air_min) || 0;
 
-  let tiempoAir = parseFloat(food.tiempo) || 0;
-  const ahorroGrasa = parseFloat(food.air) || 0;
+  // Power consumption (kW) = Watts / 1000 * Hours
+  // Oven: 3000W (3kW) * 0.6 cycling factor
+  // Airfryer: 1500W (1.5kW) * 0.7 cycling factor
 
-  // Increase oven power to 2.6 to reflect potential real savings
-  // 0.6 factor accounts for thermostat cycling
-  const consumoHorno = 2.6 * (tiempoHorno / 60) * 0.6;
-  const consumoAir = 1.5 * (tiempoAir / 60) * 0.7;
+  const ovenPowerKw = (POWER_DATA.oven / 1000) || 3.0;
+  const airfryerPowerKw = (POWER_DATA.airfryer / 1000) || 1.5;
+
+  const consumoHorno = ovenPowerKw * (tiempoHorno / 60) * 0.6;
+  const consumoAir = airfryerPowerKw * (tiempoAir / 60) * 0.7;
 
   const ahorroHoy = Math.max(
     0,
@@ -124,9 +129,8 @@ function actualizarTodo() {
 
   const ahorroAnual = ahorroHoy * 104; // Assumes 2 uses per week per year
 
-  // Adjust calorie calculation
-  // If food.trad starts as calories (e.g. 450) and food.air as savings (e.g. 15):
-  const ahorroCal = Math.max(0, parseFloat(food.trad) - ahorroGrasa);
+  // Calculate calorie savings
+  const ahorroCal = Math.max(0, food.trad_cal - food.air_cal);
 
   // 4. QUICK TRANSLATIONS FOR TAGS
   const t = DEVICE_NAMES[currentLang] || DEVICE_NAMES["es"];
@@ -150,11 +154,17 @@ function actualizarTodo() {
         ? formatearTemp(food.temp)
         : food.temp;
     tiempoTag.innerHTML = `
-          <span class="font-black">⚡ ${Math.round(tiempoHorno)}min ${t.horno
-      } vs ${Math.round(tiempoAir)}min ${t.airfryer}</span>
-          <br>
-          <span class="text-[10px] text-orange-400 font-bold uppercase">🔥 ${t.temp
-      }: ${temperaturaLabel}</span>
+        <div class="comparison-badge">
+            <div class="badge-item">
+                <span class="text-orange-500">⚡</span>
+                <span>${Math.round(tiempoHorno)}min ${t.horno} <span style="color: var(--slate-300); margin: 0 0.25rem;">/</span> <span class="badge-highlight">${Math.round(tiempoAir)}min ${t.airfryer}</span></span>
+            </div>
+            <div class="badge-separator"></div>
+            <div class="badge-item">
+                <span class="text-orange-500">🔥</span>
+                <span>${t.temp}: <span class="badge-highlight">${temperaturaLabel}</span></span>
+            </div>
+        </div>
       `;
   }
 
@@ -233,7 +243,7 @@ function showLegal(tipo) {
       modalTitle.innerText = t[mapping.title];
       modalBody.innerText = t[mapping.body];
       modalContainer.classList.remove("hidden");
-      modalContainer.classList.add("flex"); // Center with Tailwind
+      // The .modal class is already present in HTML, no need to add it, but ensuring display flex is active via CSS
     }
   }
 }
@@ -281,7 +291,11 @@ function selectLang(lang, countryCode) {
 
     const span = document.createElement("span");
     span.className = "font-bold ml-1";
-    span.textContent = lang.toUpperCase();
+    let displayLang = lang.toUpperCase();
+    if (lang === 'en') {
+      displayLang += (countryCode === 'us' ? ' (US)' : ' (UK)');
+    }
+    span.textContent = displayLang;
 
     langSelected.appendChild(img);
     langSelected.appendChild(span);
@@ -316,7 +330,8 @@ window.onload = function () {
   }, 100);
 
   // 1. Load icons
-  if (typeof lucide !== "undefined") lucide.createIcons();
+  // 1. Load icons
+  // if (typeof lucide !== "undefined") lucide.createIcons();
 
   // 3. Trigger Cookie Banner
   inicializarCookies();
@@ -342,7 +357,7 @@ function inicializarCookies() {
 
   if (banner && !yaAcepto) {
     setTimeout(() => {
-      banner.classList.remove("translate-y-full");
+      banner.classList.add("show");
     }, 1000);
   }
 }
@@ -351,11 +366,11 @@ function inicializarCookies() {
 function aceptarCookies() {
   localStorage.setItem("cookiesAceptadas", "true");
   const banner = document.getElementById("cookie-banner");
-  if (banner) banner.classList.add("translate-y-full");
+  if (banner) banner.classList.remove("show");
 }
 
 // Called from "Close" button in HTML
 function cerrarBanner() {
   const banner = document.getElementById("cookie-banner");
-  if (banner) banner.classList.add("translate-y-full");
+  if (banner) banner.classList.remove("show");
 }

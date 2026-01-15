@@ -8,7 +8,7 @@ const TRANSLATIONS = {
     LABEL_ANNUAL: "Ahorro Anual Estimado",
     BUTTON_SHARE_MONEY: "Compartir Ahorro",
     LABEL_HEALTH: "Ahorro Salud",
-    LABEL_EXERCISE: "Equivale a ejercicio por",
+    LABEL_EXERCISE: "Equivale a correr",
     BUTTON_SHARE_HEALTH: "Presumir de Salud",
     TITLE_GUIDE: "Guía Maestra de Tiempos",
     TITLE_FAQ: "Preguntas Frecuentes",
@@ -31,7 +31,7 @@ const TRANSLATIONS = {
     BUTTON_ACCEPT: "Aceptar",
     BUTTON_CLOSE: "Cerrar",
     CONTENT_LEGAL:
-      "Airfryer Saver es una herramienta informativa. Los cálculos de ahorro son estimaciones basadas en consumos medios de electrodomésticos (Horno 2500W vs Airfryer 1500W). No nos hacemos responsables de variaciones en la factura eléctrica real.",
+      "Airfryer Saver es una herramienta informativa. Los cálculos de ahorro son estimaciones basadas en consumos medios de electrodomésticos (Horno 3000W vs Airfryer 1500W). No nos hacemos responsables de variaciones en la factura eléctrica real.",
     CONTENT_PRIVACY:
       "No almacenamos ni solicitamos datos personales. Este sitio utiliza Google AdSense, que puede emplear cookies para mostrar anuncios personalizados basados en tus intereses y visitas previas a este u otros sitios web.",
     CONTENT_COOKIES:
@@ -44,7 +44,7 @@ const TRANSLATIONS = {
     LABEL_ANNUAL: "Annual Savings",
     BUTTON_SHARE_MONEY: "Share Savings",
     LABEL_HEALTH: "Health Savings",
-    LABEL_EXERCISE: "Equivalent to",
+    LABEL_EXERCISE: "Equivalent to running",
     BUTTON_SHARE_HEALTH: "Share Health",
     TITLE_GUIDE: "Master Guide",
     TITLE_FAQ: "FAQ",
@@ -65,7 +65,7 @@ const TRANSLATIONS = {
     BUTTON_ACCEPT: "Accept",
     BUTTON_CLOSE: "Close",
     CONTENT_LEGAL:
-      "Airfryer Saver is an informational tool. Savings calculations are estimates based on average appliance consumption (Oven 2500W vs Airfryer 1500W). We are not responsible for variations in your actual electricity bill.",
+      "Airfryer Saver is an informational tool. Savings calculations are estimates based on average appliance consumption (Oven 3000W vs Airfryer 1500W). We are not responsible for variations in your actual electricity bill.",
     CONTENT_PRIVACY:
       "We do not store or request personal data. This site uses Google AdSense, which may use cookies to show personalized ads based on your interests and previous visits to this or other websites.",
     CONTENT_COOKIES:
@@ -78,7 +78,7 @@ const TRANSLATIONS = {
     LABEL_ANNUAL: "Économie Annuelle",
     BUTTON_SHARE_MONEY: "Partager",
     LABEL_HEALTH: "Santé",
-    LABEL_EXERCISE: "Sport équivalent",
+    LABEL_EXERCISE: "Équivalent à la course",
     BUTTON_SHARE_HEALTH: "Partager Santé",
     TITLE_GUIDE: "Guide des Temps",
     TITLE_FAQ: "FAQ",
@@ -99,7 +99,7 @@ const TRANSLATIONS = {
     BUTTON_ACCEPT: "Accepter",
     BUTTON_CLOSE: "Fermer",
     CONTENT_LEGAL:
-      "Airfryer Saver est un outil informatif. Les calculs d'économies sont des estimations basées sur la consommation moyenne des appareils (Four 2500W vs Airfryer 1500W). Nous ne sommes pas responsables des variations de votre facture réelle.",
+      "Airfryer Saver est un outil informatif. Les calculs d'économies sont des estimations basées sur la consommation moyenne des appareils (Four 3000W vs Airfryer 1500W). Nous ne sommes pas responsables des variations de votre facture réelle.",
     CONTENT_PRIVACY:
       "Nous ne stockons ni ne demandons de données personnelles. Ce site utilise Google AdSense, qui peut utiliser des cookies pour diffuser des annonces personnalisées basées sur vos intérêts et vos visites précédentes.",
     CONTENT_COOKIES:
@@ -112,7 +112,7 @@ const TRANSLATIONS = {
     LABEL_ANNUAL: "Risparmio Annuo",
     BUTTON_SHARE_MONEY: "Condividi",
     LABEL_HEALTH: "Salute",
-    LABEL_EXERCISE: "Esercizio equivalente",
+    LABEL_EXERCISE: "Equivale alla corsa",
     BUTTON_SHARE_HEALTH: "Condividi Salute",
     TITLE_GUIDE: "Guida Tempi",
     TITLE_FAQ: "FAQ",
@@ -133,7 +133,7 @@ const TRANSLATIONS = {
     BUTTON_ACCEPT: "Accetta",
     BUTTON_CLOSE: "Chiudi",
     CONTENT_LEGAL:
-      "Airfryer Saver è uno strumento informativo. I calcoli del risparmio sono stime basate sul consumo medio degli elettrodomestici (Forno 2500W vs Airfryer 1500W). Non siamo responsabili per variazioni nella bolletta elettrica reale.",
+      "Airfryer Saver è uno strumento informativo. I calcoli del risparmio sono stime basate sul consumo medio degli elettrodomestici (Forno 3000W vs Airfryer 1500W). Non siamo responsabili per variazioni nella bolletta elettrica reale.",
     CONTENT_PRIVACY:
       "Non memorizziamo né richiediamo dati personali. Questo sito utilizza Google AdSense, che può utilizzare i cookie per mostrare annunci personalizzati basati sui tuoi interessi e sulle tue visite precedenti.",
     CONTENT_COOKIES:
@@ -146,7 +146,7 @@ const TRANSLATIONS = {
     LABEL_ANNUAL: "Jahresersparnis",
     BUTTON_SHARE_MONEY: "Teilen",
     LABEL_HEALTH: "Gesundheit",
-    LABEL_EXERCISE: "Sport Äquivalent",
+    LABEL_EXERCISE: "Entspricht dem Laufen",
     BUTTON_SHARE_HEALTH: "Teilen",
     TITLE_GUIDE: "Zeitanleitung",
     TITLE_FAQ: "FAQ",
@@ -167,7 +167,7 @@ const TRANSLATIONS = {
     BUTTON_ACCEPT: "Akzeptieren",
     BUTTON_CLOSE: "Schließen",
     CONTENT_LEGAL:
-      "Airfryer Saver ist ein Informationstool. Die Einsparungsberechnungen sind Schätzungen, die auf dem durchschnittlichen Verbrauch von Geräten basieren (Backofen 2500W vs. Airfryer 1500W). Wir haften nicht für Abweichungen in Ihrer tatsächlichen Stromrechnung.",
+      "Airfryer Saver ist ein Informationstool. Die Einsparungsberechnungen sind Schätzungen, die auf dem durchschnittlichen Verbrauch von Geräten basieren (Backofen 3000W vs. Airfryer 1500W). Wir haften nicht für Abweichungen in Ihrer tatsächlichen Stromrechnung.",
     CONTENT_PRIVACY:
       "Wir speichern oder fordern keine personenbezogenen Daten an. Diese Website verwendet Google AdSense, das Cookies verwenden kann, um personalisierte Anzeigen basierend auf Ihren Interessen und früheren Besuchen anzuzeigen.",
     CONTENT_COOKIES:
@@ -179,7 +179,7 @@ const FAQ_DATA = {
   es: [
     {
       q: "¿Consume menos que un horno?",
-      a: "Absolutamente. Al calentar un espacio mucho más pequeño (3-5 litros frente a 60 litros del horno) y hacerlo circular rápidamente, reduces el tiempo de cocción a la mitad, ahorrando entre un 40% y un 60% en tu factura.",
+      a: "Absolutamente. Al calentar un espacio mucho más pequeño (3-5 litros frente a 60 litros del horno) y hacerlo circular rápidamente, reduces el tiempo de cocción casi a la mitad, ahorrando entre un 50% y un 70% en tu factura.",
     },
     {
       q: "¿Puedo usar papel de horno?",
@@ -201,7 +201,7 @@ const FAQ_DATA = {
   en: [
     {
       q: "Does it use less energy than an oven?",
-      a: "Absolutely. By heating a much smaller space (3-5 liters vs. 60 liters in an oven) and circulating air rapidly, you cut cooking time in half, saving between 40% and 60% on your electricity bill.",
+      a: "Absolutely. By heating a much smaller space (3-5 liters vs. 60 liters in an oven) and circulating air rapidly, you cut cooking time almost in half, saving between 50% and 70% on your electricity bill.",
     },
     {
       q: "Can I use baking paper?",
@@ -223,7 +223,7 @@ const FAQ_DATA = {
   fr: [
     {
       q: "Consomme-t-elle moins qu'un four ?",
-      a: "Absolument. En chauffant un espace beaucoup plus petit (3-5 litres contre 60 pour un four) et en faisant circuler l'air rapidement, vous réduisez le temps de cuisson de moitié, économisant 40 à 60% sur votre facture.",
+      a: "Absolument. En chauffant un espace beaucoup plus petit (3-5 litres contre 60 pour un four) et en faisant circuler l'air rapidement, vous réduisez le temps de cuisson presque de moitié, économisant 50 à 70% sur votre facture.",
     },
     {
       q: "Puis-je utiliser du papier cuisson ?",
@@ -245,7 +245,7 @@ const FAQ_DATA = {
   it: [
     {
       q: "Consuma meno di un forno?",
-      a: "Assolutamente. Riscaldando uno spazio molto più piccolo (3-5 litri contro 60) e facendo circolare l'aria rapidamente, riduci i tempi di cottura a metà, risparmiando tra il 40% e il 60% in bolletta.",
+      a: "Assolutamente. Riscaldando uno spazio molto più piccolo (3-5 litri contro 60) e facendo circolare l'aria rapidamente, riduci i tempi di cottura quasi a metà, risparmiando tra il 50% e il 70% in bolletta.",
     },
     {
       q: "Posso usare carta forno?",
@@ -267,7 +267,7 @@ const FAQ_DATA = {
   de: [
     {
       q: "Verbraucht er weniger als ein Ofen?",
-      a: "Absolut. Da ein viel kleinerer Raum (3-5 Liter vs. 60 Liter) erhitzt wird und die Luft schnell zirkuliert, halbieren Sie die Kochzeit und sparen 40% bis 60% Ihrer Stromrechnung.",
+      a: "Absolut. Da ein viel kleinerer Raum (3-5 Liter vs. 60 Liter) erhitzt wird und die Luft schnell zirkuliert, halbieren Sie fast die Kochzeit und sparen 50% bis 70% Ihrer Stromrechnung.",
     },
     {
       q: "Kann ich Backpapier verwenden?",
@@ -298,10 +298,13 @@ const FOOD_DATA = {
       it: "Patatine",
       de: "Pommes",
     },
-    trad: 450,
-    air: 15,
+    // Calories per typical portion (approx 200g)
+    // Deep fried: ~600kcal. Airfry: ~300kcal.
+    trad_cal: 600,
+    air_cal: 300,
+    trad_min: 45, // Oven/Deep fry total time
+    air_min: 20,
     temp: "200",
-    tiempo: "20",
     tips: {
       es: "Lávalas antes para quitar el almidón y conseguir que queden extra crujientes.",
       en: "Wash them first to remove starch and get them extra crispy.",
@@ -319,10 +322,11 @@ const FOOD_DATA = {
       it: "Ali",
       de: "Flügel",
     },
-    trad: 180,
-    air: 5,
+    trad_cal: 550, // Deep fried (6 wings)
+    air_cal: 380, // Air fried (fat drains)
+    trad_min: 45,
+    air_min: 22,
     temp: "195",
-    tiempo: "22",
     tips: {
       es: "Colócalas con la piel hacia arriba para que la grasa se drene perfectamente.",
       en: "Place them skin-side up so the fat drains perfectly.",
@@ -340,10 +344,11 @@ const FOOD_DATA = {
       it: "Salmone",
       de: "Lachs",
     },
-    trad: 120,
-    air: 0,
+    trad_cal: 400, // Pan fried with oil
+    air_cal: 320, // Air fried
+    trad_min: 20,
+    air_min: 12,
     temp: "180",
-    tiempo: "12",
     tips: {
       es: "Piel hacia abajo, no necesita nada de aceite adicional.",
       en: "Skin side down, no additional oil needed.",
@@ -361,10 +366,11 @@ const FOOD_DATA = {
       it: "Crocchette",
       de: "Kroketten",
     },
-    trad: 400,
-    air: 10,
+    trad_cal: 450, // Deep fried
+    air_cal: 250, // Air fried sprayed
+    trad_min: 20, // Deep fryer setup + fry time
+    air_min: 10,
     temp: "200",
-    tiempo: "10",
     tips: {
       es: "Si son congeladas, pulveriza un toque de aceite para un dorado óptimo.",
       en: "If frozen, spray a touch of oil for optimal browning.",
@@ -382,10 +388,11 @@ const FOOD_DATA = {
       it: "Pizza",
       de: "Pizza",
     },
-    trad: 80,
-    air: 0,
+    trad_cal: 600,
+    air_cal: 540, // Reduced to reflect oil/fat loss through basket
+    trad_min: 22,
+    air_min: 10,
     temp: "180",
-    tiempo: "4",
     tips: {
       es: "Recupera el crujiente original mucho mejor que el microondas.",
       en: "Recovers the original crunch much better than the microwave.",
@@ -403,10 +410,11 @@ const FOOD_DATA = {
       it: "Pancetta",
       de: "Speck",
     },
-    trad: 150,
-    air: 0,
+    trad_cal: 300, // Pan fried (cooks in own fat but sits in it)
+    air_cal: 250, // Drains fat
+    trad_min: 15,
+    air_min: 8,
     temp: "190",
-    tiempo: "8",
     tips: {
       es: "Pon un trozo de pan debajo para absorber la grasa y evitar humos.",
       en: "Put a piece of bread underneath to absorb fat and prevent smoke.",
@@ -424,10 +432,11 @@ const FOOD_DATA = {
       it: "Broccoli",
       de: "Brokkoli",
     },
-    trad: 50,
-    air: 5,
+    trad_cal: 120, // Roasted with oil
+    air_cal: 80, // Roasted less oil
+    trad_min: 25,
+    air_min: 8,
     temp: "185",
-    tiempo: "8",
     tips: {
       es: "Queda con una textura tostada increíble. Añade especias al final.",
       en: "It gets an amazing toasted texture. Add spices at the end.",
@@ -445,10 +454,11 @@ const FOOD_DATA = {
       it: "Nuggets",
       de: "Nuggets",
     },
-    trad: 350,
-    air: 10,
+    trad_cal: 480, // Deep fried
+    air_cal: 300, // Air fried
+    trad_min: 20,
+    air_min: 12,
     temp: "200",
-    tiempo: "12",
     tips: {
       es: "Agita el cesto a mitad de tiempo para un dorado uniforme.",
       en: "Shake the basket halfway through for even browning.",
@@ -466,10 +476,11 @@ const FOOD_DATA = {
       it: "Bistecca",
       de: "Steak",
     },
-    trad: 200,
-    air: 10,
+    trad_cal: 400, // Pan seared with butter/oil
+    air_cal: 350,
+    trad_min: 15,
+    air_min: 10,
     temp: "200",
-    tiempo: "10",
     tips: {
       es: "Precalienta la freidora 5 minutos para sellar bien la carne.",
       en: "Preheat the airfryer for 5 minutes to sear the meat properly.",
@@ -487,10 +498,11 @@ const FOOD_DATA = {
       it: "Mandorle",
       de: "Mandeln",
     },
-    trad: 100,
-    air: 0,
+    trad_cal: 620, // Fried in oil
+    air_cal: 580, // Dry roasted (healthier)
+    trad_min: 15,
+    air_min: 6,
     temp: "160",
-    tiempo: "8",
     tips: {
       es: "Vigílalas bien, se tuestan en un abrir y cerrar de ojos.",
       en: "Watch them closely, they toast in the blink of an eye.",
@@ -508,10 +520,11 @@ const FOOD_DATA = {
       it: "Polpette",
       de: "Fleischbällchen",
     },
-    trad: 180,
-    air: 15,
+    trad_cal: 450, // Pan fried
+    air_cal: 300, // Air fried
+    trad_min: 25,
+    air_min: 12,
     temp: "190",
-    tiempo: "12",
     tips: {
       es: "Pulveriza aceite para que queden jugosas por dentro.",
       en: "Spray oil so they stay juicy on the inside.",
@@ -529,10 +542,11 @@ const FOOD_DATA = {
       it: "Asparagi",
       de: "Spargel",
     },
-    trad: 40,
-    air: 5,
+    trad_cal: 80, // Roasted oil
+    air_cal: 50, // Less oil
+    trad_min: 20,
+    air_min: 8,
     temp: "190",
-    tiempo: "8",
     tips: {
       es: "Corta la base dura y añade sal gorda al final.",
       en: "Cut the hard base and add coarse salt at the end.",
@@ -550,10 +564,11 @@ const FOOD_DATA = {
       it: "Peperoni",
       de: "Paprika",
     },
-    trad: 40,
-    air: 5,
+    trad_cal: 90,
+    air_cal: 60,
+    trad_min: 35,
+    air_min: 15,
     temp: "180",
-    tiempo: "15",
     tips: {
       es: "Perfectos para asar. Si los quieres pelar, mételos en una bolsa.",
       en: "Perfect for roasting. If you want to peel them, put them in a bag.",
@@ -571,10 +586,11 @@ const FOOD_DATA = {
       it: "Toast",
       de: "Toast",
     },
-    trad: 30,
-    air: 0,
+    trad_cal: 180, // Buttered/Skillet toasted
+    air_cal: 150, // Dry toasted
+    trad_min: 10,
+    air_min: 4,
     temp: "200",
-    tiempo: "4",
     tips: {
       es: "Cuidado, el aire puede mover las rebanadas muy finas.",
       en: "Careful, the air can blow very thin slices around.",
@@ -592,10 +608,11 @@ const FOOD_DATA = {
       it: "Gamberi",
       de: "Garnelen",
     },
-    trad: 100,
-    air: 5,
+    trad_cal: 250, // Pan fried garlic oil
+    air_cal: 150,
+    trad_min: 12,
+    air_min: 6,
     temp: "190",
-    tiempo: "6",
     tips: {
       es: "Cocción ultra rápida. No te pases de tiempo.",
       en: "Ultra fast cooking. Don't overcook them.",
@@ -607,10 +624,11 @@ const FOOD_DATA = {
   tofu: {
     icono: "🧊",
     nombres: { es: "Tofu", en: "Tofu", fr: "Tofu", it: "Tofu", de: "Tofu" },
-    trad: 120,
-    air: 5,
+    trad_cal: 180, // Pan fried oil
+    air_cal: 120,
+    trad_min: 25,
+    air_min: 15,
     temp: "190",
-    tiempo: "15",
     tips: {
       es: "Sécalo muy bien con papel de cocina antes de meterlo.",
       en: "Dry it very well with paper towels before putting it in.",
@@ -627,12 +645,12 @@ const FOOD_DATA = {
       fr: "Pomme",
       it: "Mela",
       de: "Apfel",
-      de: "Apfel",
     },
-    trad: 60,
-    air: 0,
+    trad_cal: 120, // Pan fried with sugar/butter
+    air_cal: 80, // Baked/Dehydrated
+    trad_min: 30,
+    air_min: 15,
     temp: "150",
-    tiempo: "15",
     tips: {
       es: "Corta láminas casi transparentes para un snack sano.",
       en: "Cut almost transparent slices for a healthy snack.",
@@ -644,10 +662,11 @@ const FOOD_DATA = {
   mazorca: {
     icono: "🌽",
     nombres: { es: "Mazorca", en: "Corn", fr: "Maïs", it: "Mais", de: "Mais" },
-    trad: 150,
-    air: 10,
+    trad_cal: 150, // Boiled/Grilled butter
+    air_cal: 130, // Roasted
+    trad_min: 25,
+    air_min: 12,
     temp: "190",
-    tiempo: "12",
     tips: {
       es: "Úntala con mantequilla y sal antes de empezar.",
       en: "Spread butter and salt before starting.",
@@ -665,15 +684,16 @@ const FOOD_DATA = {
       it: "Castagne",
       de: "Kastanien",
     },
-    trad: 180,
-    air: 0,
+    trad_cal: 220, // Traditional roast often uses more fat or sugar
+    air_cal: 200, // Dry optimized roast
+    trad_min: 40,
+    air_min: 15,
     temp: "200",
-    tiempo: "15",
     tips: {
       es: "Hazles un corte profundo en cruz para que no exploten.",
       en: "Make a deep cross-cut so they don't explode.",
       fr: "Faites une incision profonde en croix pour qu'elles n'explosent pas.",
-      it: "Fai un taglio profondo a croce per evitare che esplodano.",
+      it: "Fai un taglio profondo a croce per evitarne l'esplosione.",
       de: "Tief über Kreuz einschneiden, damit sie nicht explodieren.",
     },
   },
@@ -686,10 +706,11 @@ const FOOD_DATA = {
       it: "Torta",
       de: "Kuchen",
     },
-    trad: 300,
-    air: 5,
+    trad_cal: 400, // Oven baked (often larger portions/different crust)
+    air_cal: 350, // Airfryer baked (often lighter texture/smaller)
+    trad_min: 45,
+    air_min: 25,
     temp: "160",
-    tiempo: "25",
     tips: {
       es: "Usa un molde adecuado y deja espacio para que suba.",
       en: "Use a suitable mold and leave space for it to rise.",
@@ -707,10 +728,11 @@ const FOOD_DATA = {
       it: "Salsicce",
       de: "Würstchen",
     },
-    trad: 250,
-    air: 10,
+    trad_cal: 300,
+    air_cal: 240, // Drains fat significantly more than a pan
+    trad_min: 15,
+    air_min: 8,
     temp: "180",
-    tiempo: "10",
     tips: {
       es: "Pínchalas con un tenedor para que suelten la grasa.",
       en: "Prick them with a fork to release the fat.",
@@ -728,10 +750,11 @@ const FOOD_DATA = {
       it: "Donuts",
       de: "Donuts",
     },
-    trad: 400,
-    air: 15,
+    trad_cal: 450, // Deep fried
+    air_cal: 250, // Air fried
+    trad_min: 20, // Deep fry process
+    air_min: 8,
     temp: "175",
-    tiempo: "8",
     tips: {
       es: "Pincela con un poco de leche para un acabado dorado.",
       en: "Brush with a little milk for a golden finish.",
@@ -749,10 +772,11 @@ const FOOD_DATA = {
       it: "Melanzana",
       de: "Aubergine",
     },
-    trad: 80,
-    air: 5,
+    trad_cal: 150, // Absorbs LOTS of oil in pan
+    air_cal: 50,
+    trad_min: 20,
+    air_min: 12,
     temp: "190",
-    tiempo: "15",
     tips: {
       es: "Sálalas 10 min antes para que pierdan el amargor.",
       en: "Salt them 10 min before to remove bitterness.",
@@ -770,10 +794,11 @@ const FOOD_DATA = {
       it: "Formaggio",
       de: "Käse",
     },
-    trad: 250,
-    air: 0,
+    trad_cal: 320, // Fried Camembert (sits in fat)
+    air_cal: 280, // Air fried (drains fat)
+    trad_min: 15,
+    air_min: 8,
     temp: "180",
-    tiempo: "10",
     tips: {
       es: "Ideal para dipear. Hazle unos cortes arriba.",
       en: "Ideal for dipping. Make some cuts on top.",
@@ -791,15 +816,16 @@ const FOOD_DATA = {
       it: "Funghi",
       de: "Pilze",
     },
-    trad: 40,
-    air: 5,
+    trad_cal: 80, // Sautéed oil
+    air_cal: 40,
+    trad_min: 15,
+    air_min: 8,
     temp: "180",
-    tiempo: "10",
     tips: {
       es: "Rellénalos con ajo y perejil para un sabor explosivo.",
       en: "Stuff them with garlic and parsley for explosive flavor.",
       fr: "Garnissez-les d'ail et de persil pour une saveur explosive.",
-      it: "Garnissez-les d'ail et de persil pour une saveur explosive.",
+      it: "Farciteli con aglio e prezzemolo per un sapore esplosivo.",
       de: "Mit Knoblauch und Petersilie füllen für explosiven Geschmack.",
     },
   },
@@ -811,4 +837,10 @@ const DEVICE_NAMES = {
   fr: { horno: "FOUR", airfryer: "FRITEUSE", temp: "TEMP" },
   it: { horno: "FORNO", airfryer: "FRIGGITRICE", temp: "TEMP" },
   de: { horno: "OFEN", airfryer: "HEISSLUFTFRITTEUSE", temp: "TEMP" },
+};
+
+const POWER_DATA = {
+  // Average Watts
+  oven: 3000,
+  airfryer: 1500
 };
