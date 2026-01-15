@@ -35,9 +35,17 @@ function changeLanguage(lang) {
     document.getElementById("btn-cookie-close").innerText = t.BUTTON_CLOSE;
   }
 
+  // Get food keys sorted alphabetically by their name in the current language
+  const sortedFoodKeys = Object.keys(FOOD_DATA).sort((a, b) => {
+    const nameA = FOOD_DATA[a].nombres[lang] || FOOD_DATA[a].nombres["es"];
+    const nameB = FOOD_DATA[b].nombres[lang] || FOOD_DATA[b].nombres["es"];
+    return nameA.localeCompare(nameB);
+  });
+
   // Update Food Selector (Calculator Dropdown)
   const sel = document.getElementById("alimento-principal");
-  sel.innerHTML = Object.keys(FOOD_DATA)
+  const currentValue = sel.value; // Store to avoid resetting user selection on lang change
+  sel.innerHTML = sortedFoodKeys
     .map(
       (k) =>
         `<option value="${k}">${FOOD_DATA[k].icono} ${FOOD_DATA[k].nombres[lang] || FOOD_DATA[k].nombres["es"]
@@ -45,8 +53,11 @@ function changeLanguage(lang) {
     )
     .join("");
 
+  // Restore value or set default if blank
+  if (currentValue) sel.value = currentValue;
+
   // Update Visual Guide (Bottom Cards)
-  document.getElementById("guia-full").innerHTML = Object.keys(FOOD_DATA)
+  document.getElementById("guia-full").innerHTML = sortedFoodKeys
     .map(
       (k) => `
         <div onclick="seleccionarGuia('${k}')" class="guide-card">
@@ -192,20 +203,24 @@ function compartir(tipo) {
     tipo === "dinero"
       ? document
         .getElementById("ahorro-hoy-text")
-        .innerText.replace("€", "")
+        .innerText.replace(currentCurrency, "")
         .trim()
       : document
         .getElementById("calorias-text")
         .innerText.replace("-", "")
         .trim();
 
-  const valY = document
-    .getElementById("ejercicio-text")
-    .innerText.split(" ")[0];
+  const valY = tipo === "dinero"
+    ? document.getElementById("ahorro-ano-text").innerText.replace(currentCurrency, "").trim()
+    : document.getElementById("ejercicio-text").innerText.split(" ")[0];
 
   let msg =
     tipo === "dinero"
-      ? t.SHARE_MESSAGE_MONEY.replace("{X}", valX).replace("{F}", f)
+      ? t.SHARE_MESSAGE_MONEY
+        .replace("{X}", valX)
+        .replace("{Y}", valY)
+        .replace("{F}", f)
+        .replace(/{C}/g, currentCurrency)
       : t.SHARE_MESSAGE_HEALTH.replace("{X}", valX).replace("{F}", f).replace("{Y}", valY);
 
   window.open(
@@ -324,6 +339,10 @@ window.onload = function () {
 
   // Initialize website with detected language
   selectLang(targetLang, initialCountry[targetLang]);
+
+  // Set default food to fries (patatas)
+  const sel = document.getElementById("alimento-principal");
+  if (sel) sel.value = "patatas";
 
   setTimeout(() => {
     actualizarTodo();

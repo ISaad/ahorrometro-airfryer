@@ -20,16 +20,15 @@ const TRANSLATIONS = {
     SEO_PARAGRAPH_1: "Utilizar una airfryer no es solo una moda; es la decisión financiera más inteligente para tu hogar en 2026. Con los precios de la electricidad disparados, cocinar en un 50% menos de tiempo que un horno se traduce en dinero real en tu bolsillo. Esta calculadora avanzada usa algoritmos de consumo real para demostrarte lo que ahorras cada día.",
     SEO_PARAGRAPH_2: "Además del ahorro económico, el impacto en tu salud al reducir hasta un 80% las grasas saturadas es un ahorro a largo plazo en bienestar físico. Cocinar con aire es la forma más eficiente de comer sano sin renunciar al sabor crujiente que tanto nos gusta, optimizando cada vatio de energía.",
     SHARE_MESSAGE_MONEY:
-      "¡He ahorrado hoy {X}€ cocinando {F} con mi Airfryer! Mira cuánto puedes ahorrar tú en:",
+      "¡He ahorrado {X}{C} hoy cocinando {F}! ⚡ ¡Eso son {Y}{C} al año! Calcula tu ahorro en:",
     SHARE_MESSAGE_HEALTH:
       "¡He quemado {X} kcal menos cocinando {F}! Equivale a {Y} min de carrera. ¡Pásate al aire!",
     FOOTER_LEGAL: "Aviso Legal",
     FOOTER_PRIVACY: "Privacidad",
     FOOTER_COOKIES: "Cookies",
-    COOKIE_TEXT:
-      "Usamos cookies para mejorar tu experiencia y mostrarte anuncios personalizados.",
-    BUTTON_ACCEPT: "Aceptar",
-    BUTTON_CLOSE: "Cerrar",
+    COOKIE_TEXT: "Utilizamos cookies propias y de terceros para analizar el tráfico y mostrar anuncios personalizados. Puedes aceptar todas las cookies o rechazar las que no sean necesarias.",
+    BUTTON_ACCEPT: "Aceptar todas",
+    BUTTON_CLOSE: "Rechazar opcionales",
     CONTENT_LEGAL:
       "Airfryer Saver es una herramienta informativa. Los cálculos de ahorro son estimaciones basadas en consumos medios de electrodomésticos (Horno 3000W vs Airfryer 1500W). No nos hacemos responsables de variaciones en la factura eléctrica real.",
     CONTENT_PRIVACY:
@@ -55,15 +54,14 @@ const TRANSLATIONS = {
     NAV_FAQ: "FAQ",
     SEO_PARAGRAPH_1: "Using an airfryer is not just a trend; it's the smartest financial decision for your home in 2026. With electricity prices soaring, cooking in 50% less time translates to real money in your pocket. This advanced calculator uses real consumption algorithms to show your daily savings.",
     SEO_PARAGRAPH_2: "Beyond financial savings, reducing saturated fats by up to 80% is a long-term investment in your physical well-being. Air cooking is the most efficient way to eat healthy without sacrificing the crunch we all love, optimizing every watt of energy.",
-    SHARE_MESSAGE_MONEY: "Saved {X}€ cooking {F} today! Check your savings here:",
+    SHARE_MESSAGE_MONEY: "Saved {X}{C} today cooking {F}! ⚡ That's {Y}{C} per year! Calculate your savings at:",
     SHARE_MESSAGE_HEALTH: "Cut {X} kcal cooking {F}! Like running for {Y} min. Go Airfryer!",
     FOOTER_LEGAL: "Legal Notice",
     FOOTER_PRIVACY: "Privacy",
     FOOTER_COOKIES: "Cookies",
-    COOKIE_TEXT:
-      "We use cookies to improve your experience and show you personalized ads.",
-    BUTTON_ACCEPT: "Accept",
-    BUTTON_CLOSE: "Close",
+    COOKIE_TEXT: "We use our own and third-party cookies to analyze traffic and show personalized ads. You can accept all cookies or reject non-essential ones.",
+    BUTTON_ACCEPT: "Accept all",
+    BUTTON_CLOSE: "Reject optional",
     CONTENT_LEGAL:
       "Airfryer Saver is an informational tool. Savings calculations are estimates based on average appliance consumption (Oven 3000W vs Airfryer 1500W). We are not responsible for variations in your actual electricity bill.",
     CONTENT_PRIVACY:
@@ -89,15 +87,14 @@ const TRANSLATIONS = {
     NAV_FAQ: "FAQ",
     SEO_PARAGRAPH_1: "L'airfryer est le choix financier le plus intelligent en 2026. Cuisiner deux fois plus vite signifie des factures d'électricité réduites. Ce calculateur utilise des algorithmes de consommation réelle pour prouver vos économies quotidiennes.",
     SEO_PARAGRAPH_2: "Économisez de l'argent et gagnez en santé en réduisant les graisses saturées de 80%. C'est l'efficacité pure pour votre maison sans sacrifier le goût croustillant.",
-    SHARE_MESSAGE_MONEY: "J'ai économisé {X}€ avec {F}!",
-    SHARE_MESSAGE_HEALTH: "Moins {X} kcal avec {F}!",
+    SHARE_MESSAGE_MONEY: "J'ai économisé {X}{C} aujourd'hui avec {F} ! ⚡ Soit {Y}{C} par an ! Calculez vos économies :",
+    SHARE_MESSAGE_HEALTH: "J'ai réduit {X} kcal avec {F} ! 🏃 Équivalent à {Y} min de course. Passez à l'Airfryer !",
     FOOTER_LEGAL: "Mentions Légales",
     FOOTER_PRIVACY: "Confidentialité",
     FOOTER_COOKIES: "Cookies",
-    COOKIE_TEXT:
-      "Nous utilisons des cookies pour améliorer votre expérience et diffuser des annonces.",
-    BUTTON_ACCEPT: "Accepter",
-    BUTTON_CLOSE: "Fermer",
+    COOKIE_TEXT: "Nous utilisons des cookies pour analyser le trafic et diffuser des annonces personnalisées. Vous pouvez accepter tous les cookies ou refuser ceux qui ne sont pas nécessaires.",
+    BUTTON_ACCEPT: "Tout accepter",
+    BUTTON_CLOSE: "Refuser optionnels",
     CONTENT_LEGAL:
       "Airfryer Saver est un outil informatif. Les calculs d'économies sont des estimations basées sur la consommation moyenne des appareils (Four 3000W vs Airfryer 1500W). Nous ne sommes pas responsables des variations de votre facture réelle.",
     CONTENT_PRIVACY:
@@ -123,15 +120,14 @@ const TRANSLATIONS = {
     NAV_FAQ: "FAQ",
     SEO_PARAGRAPH_1: "L'airfryer è la mossa finanziaria più intelligente del 2026. Cucinare in metà tempo significa bollette più basse. Questo calcolatore avanzato ti mostra quanto risparmi ogni giorno.",
     SEO_PARAGRAPH_2: "Risparmia denaro e guadagna salute riducendo i grassi saturi dell'80%. Efficienza pura per la tua casa senza rinunciare alla croccantezza.",
-    SHARE_MESSAGE_MONEY: "Ho risparmiato {X}€ con {F}!",
-    SHARE_MESSAGE_HEALTH: "Meno {X} kcal con {F}!",
+    SHARE_MESSAGE_MONEY: "Ho risparmiato {X}{C} oggi cucinando {F}! ⚡ Sono {Y}{C} all'anno! Calcola il tuo risparmio:",
+    SHARE_MESSAGE_HEALTH: "Ho ridotto {X} kcal cucinando {F}! 🏃 Equivalente a {Y} min di corsa. Passa all'Airfryer!",
     FOOTER_LEGAL: "Note Legali",
     FOOTER_PRIVACY: "Privacy",
     FOOTER_COOKIES: "Cookies",
-    COOKIE_TEXT:
-      "Utilizziamo i cookie per migliorare la tua esperienza e mostrarti annunci.",
-    BUTTON_ACCEPT: "Accetta",
-    BUTTON_CLOSE: "Chiudi",
+    COOKIE_TEXT: "Utilizziamo cookie propri e di terze parti per analizzare il traffico e mostrare annunci personalizzati. Puoi accettare tutti i cookie o rifiutare quelli non necessari.",
+    BUTTON_ACCEPT: "Accetta tutti",
+    BUTTON_CLOSE: "Rifiuta opzionali",
     CONTENT_LEGAL:
       "Airfryer Saver è uno strumento informativo. I calcoli del risparmio sono stime basate sul consumo medio degli elettrodomestici (Forno 3000W vs Airfryer 1500W). Non siamo responsabili per variazioni nella bolletta elettrica reale.",
     CONTENT_PRIVACY:
@@ -157,15 +153,14 @@ const TRANSLATIONS = {
     NAV_FAQ: "FAQ",
     SEO_PARAGRAPH_1: "Airfryers sind 2026 die klügste finanzielle Entscheidung. Schnelleres Kochen bedeutet niedrigere Rechnungen. Dieser Rechner zeigt Ihre täglichen Einsparungen präzise an.",
     SEO_PARAGRAPH_2: "Sparen Sie Geld und bleiben Sie gesund, indem Sie gesättigte Fette um 80% reduzieren. Reine Effizienz für Ihr Zuhause ohne Geschmacksverlust.",
-    SHARE_MESSAGE_MONEY: "Habe {X}€ gespart mit {F}!",
-    SHARE_MESSAGE_HEALTH: "{X} kcal weniger mit {F}!",
+    SHARE_MESSAGE_MONEY: "Heute {X}{C} gespart beim Kochen von {F}! ⚡ Das sind {Y}{C} pro Jahr! Berechnen Sie Ihre Ersparnis:",
+    SHARE_MESSAGE_HEALTH: "{X} kcal weniger beim Kochen von {F}! 🏃 Entspricht {Y} Min. Laufen. Zeit für den Airfryer!",
     FOOTER_LEGAL: "Impressum",
     FOOTER_PRIVACY: "Datenschutz",
     FOOTER_COOKIES: "Cookies",
-    COOKIE_TEXT:
-      "Wir verwenden Cookies, um Ihre Erfahrung zu verbessern und Anzeigen anzuzeigen.",
-    BUTTON_ACCEPT: "Akzeptieren",
-    BUTTON_CLOSE: "Schließen",
+    COOKIE_TEXT: "Wir verwenden eigene und Cookies von Drittanbietern, um den Datenverkehr zu analysieren und personalisierte Werbung anzuzeigen. Sie können alle Cookies akzeptieren oder optionale ablehnen.",
+    BUTTON_ACCEPT: "Alle akzeptieren",
+    BUTTON_CLOSE: "Optionale ablehnen",
     CONTENT_LEGAL:
       "Airfryer Saver ist ein Informationstool. Die Einsparungsberechnungen sind Schätzungen, die auf dem durchschnittlichen Verbrauch von Geräten basieren (Backofen 3000W vs. Airfryer 1500W). Wir haften nicht für Abweichungen in Ihrer tatsächlichen Stromrechnung.",
     CONTENT_PRIVACY:

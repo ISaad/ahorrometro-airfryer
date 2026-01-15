@@ -496,11 +496,12 @@ a {
 }
 
 .theme-blue .share-btn {
-    background-color: var(--blue-500);
+    background-color: #25D366;
+    /* Match orange theme green */
 }
 
 .theme-blue .share-btn:hover {
-    background-color: var(--blue-600);
+    background-color: #20ba5a;
 }
 
 .theme-blue .sub-box {
