@@ -1,4 +1,4 @@
-const articlesData = {
+const ARTICLES_DATA = {
   es: [
     {
       t: "Ahorro Real: Airfryer vs Horno",

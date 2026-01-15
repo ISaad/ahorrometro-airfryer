@@ -1,181 +1,181 @@
-const currencies = { es: "€", fr: "€", it: "€", de: "€", gb: "£", us: "$" };
+const CURRENCIES = { es: "€", fr: "€", it: "€", de: "€", gb: "£", us: "$" };
 
-const i18n = {
+const TRANSLATIONS = {
   es: {
-    hero: "Cocina mejor, <span class='text-orange-500'>ahorra dinero.</span>",
-    elec: "Ahorro Eléctrico vs Horno",
-    today: "Hoy",
-    annual: "Ahorro Anual Estimado",
-    share_m: "Compartir Ahorro",
-    health: "Ahorro Salud",
-    exercise: "Equivale a ejercicio por",
-    share_h: "Presumir de Salud",
-    guide: "Guía Maestra de Tiempos",
-    faq: "Preguntas Frecuentes",
-    seo_t: "¿Por qué la freidora es la mejor inversión?",
-    min_at: "MINUTOS A",
-    nav_c: "Calculadora",
-    nav_g: "Guía",
-    nav_f: "FAQ",
-    p1: "Utilizar una airfryer no es solo una moda; es la decisión financiera más inteligente para tu hogar en 2026. Con los precios de la electricidad disparados, cocinar en un 50% menos de tiempo que un horno se traduce en dinero real en tu bolsillo. Esta calculadora avanzada usa algoritmos de consumo real para demostrarte lo que ahorras cada día.",
-    p2: "Además del ahorro económico, el impacto en tu salud al reducir hasta un 80% las grasas saturadas es un ahorro a largo plazo en bienestar físico. Cocinar con aire es la forma más eficiente de comer sano sin renunciar al sabor crujiente que tanto nos gusta, optimizando cada vatio de energía.",
-    msg_m:
+    HERO_TITLE: "Cocina mejor, <span class='text-orange-500'>ahorra dinero.</span>",
+    LABEL_ELECTRICITY: "Ahorro Eléctrico vs Horno",
+    LABEL_TODAY: "Hoy",
+    LABEL_ANNUAL: "Ahorro Anual Estimado",
+    BUTTON_SHARE_MONEY: "Compartir Ahorro",
+    LABEL_HEALTH: "Ahorro Salud",
+    LABEL_EXERCISE: "Equivale a ejercicio por",
+    BUTTON_SHARE_HEALTH: "Presumir de Salud",
+    TITLE_GUIDE: "Guía Maestra de Tiempos",
+    TITLE_FAQ: "Preguntas Frecuentes",
+    TITLE_SEO: "¿Por qué la freidora es la mejor inversión?",
+    LABEL_MINUTES_AT: "MINUTOS A",
+    NAV_CALCULATOR: "Calculadora",
+    NAV_GUIDE: "Guía",
+    NAV_FAQ: "FAQ",
+    SEO_PARAGRAPH_1: "Utilizar una airfryer no es solo una moda; es la decisión financiera más inteligente para tu hogar en 2026. Con los precios de la electricidad disparados, cocinar en un 50% menos de tiempo que un horno se traduce en dinero real en tu bolsillo. Esta calculadora avanzada usa algoritmos de consumo real para demostrarte lo que ahorras cada día.",
+    SEO_PARAGRAPH_2: "Además del ahorro económico, el impacto en tu salud al reducir hasta un 80% las grasas saturadas es un ahorro a largo plazo en bienestar físico. Cocinar con aire es la forma más eficiente de comer sano sin renunciar al sabor crujiente que tanto nos gusta, optimizando cada vatio de energía.",
+    SHARE_MESSAGE_MONEY:
       "¡He ahorrado hoy {X}€ cocinando {F} con mi Airfryer! Mira cuánto puedes ahorrar tú en:",
-    msg_h:
+    SHARE_MESSAGE_HEALTH:
       "¡He quemado {X} kcal menos cocinando {F}! Equivale a {Y} min de carrera. ¡Pásate al aire!",
-    f_legal: "Aviso Legal",
-    f_priv: "Privacidad",
-    f_cook: "Cookies",
-    cookie_txt:
+    FOOTER_LEGAL: "Aviso Legal",
+    FOOTER_PRIVACY: "Privacidad",
+    FOOTER_COOKIES: "Cookies",
+    COOKIE_TEXT:
       "Usamos cookies para mejorar tu experiencia y mostrarte anuncios personalizados.",
-    btn_acc: "Aceptar",
-    btn_close: "Cerrar",
-    legal_content:
+    BUTTON_ACCEPT: "Aceptar",
+    BUTTON_CLOSE: "Cerrar",
+    CONTENT_LEGAL:
       "Airfryer Saver es una herramienta informativa. Los cálculos de ahorro son estimaciones basadas en consumos medios de electrodomésticos (Horno 2500W vs Airfryer 1500W). No nos hacemos responsables de variaciones en la factura eléctrica real.",
-    priv_content:
+    CONTENT_PRIVACY:
       "No almacenamos ni solicitamos datos personales. Este sitio utiliza Google AdSense, que puede emplear cookies para mostrar anuncios personalizados basados en tus intereses y visitas previas a este u otros sitios web.",
-    cook_content:
+    CONTENT_COOKIES:
       "Utilizamos cookies técnicas necesarias para el funcionamiento de la web y cookies de terceros (Google AdSense) para analizar el tráfico y personalizar la publicidad. Al navegar por la web, aceptas su uso.",
   },
   en: {
-    hero: "Cook better, <span class='text-orange-500'>save money.</span>",
-    elec: "Electricity vs Oven",
-    today: "Today",
-    annual: "Annual Savings",
-    share_m: "Share Savings",
-    health: "Health Savings",
-    exercise: "Equivalent to",
-    share_h: "Share Health",
-    guide: "Master Guide",
-    faq: "FAQ",
-    seo_t: "Why Airfryers in 2026?",
-    min_at: "MINUTES AT",
-    nav_c: "Calculator",
-    nav_g: "Guide",
-    nav_f: "FAQ",
-    p1: "Using an airfryer is not just a trend; it's the smartest financial decision for your home in 2026. With electricity prices soaring, cooking in 50% less time translates to real money in your pocket. This advanced calculator uses real consumption algorithms to show your daily savings.",
-    p2: "Beyond financial savings, reducing saturated fats by up to 80% is a long-term investment in your physical well-being. Air cooking is the most efficient way to eat healthy without sacrificing the crunch we all love, optimizing every watt of energy.",
-    msg_m: "Saved {X}€ cooking {F} today! Check your savings here:",
-    msg_h: "Cut {X} kcal cooking {F}! Like running for {Y} min. Go Airfryer!",
-    f_legal: "Legal Notice",
-    f_priv: "Privacy",
-    f_cook: "Cookies",
-    cookie_txt:
+    HERO_TITLE: "Cook better, <span class='text-orange-500'>save money.</span>",
+    LABEL_ELECTRICITY: "Electricity vs Oven",
+    LABEL_TODAY: "Today",
+    LABEL_ANNUAL: "Annual Savings",
+    BUTTON_SHARE_MONEY: "Share Savings",
+    LABEL_HEALTH: "Health Savings",
+    LABEL_EXERCISE: "Equivalent to",
+    BUTTON_SHARE_HEALTH: "Share Health",
+    TITLE_GUIDE: "Master Guide",
+    TITLE_FAQ: "FAQ",
+    TITLE_SEO: "Why Airfryers in 2026?",
+    LABEL_MINUTES_AT: "MINUTES AT",
+    NAV_CALCULATOR: "Calculator",
+    NAV_GUIDE: "Guide",
+    NAV_FAQ: "FAQ",
+    SEO_PARAGRAPH_1: "Using an airfryer is not just a trend; it's the smartest financial decision for your home in 2026. With electricity prices soaring, cooking in 50% less time translates to real money in your pocket. This advanced calculator uses real consumption algorithms to show your daily savings.",
+    SEO_PARAGRAPH_2: "Beyond financial savings, reducing saturated fats by up to 80% is a long-term investment in your physical well-being. Air cooking is the most efficient way to eat healthy without sacrificing the crunch we all love, optimizing every watt of energy.",
+    SHARE_MESSAGE_MONEY: "Saved {X}€ cooking {F} today! Check your savings here:",
+    SHARE_MESSAGE_HEALTH: "Cut {X} kcal cooking {F}! Like running for {Y} min. Go Airfryer!",
+    FOOTER_LEGAL: "Legal Notice",
+    FOOTER_PRIVACY: "Privacy",
+    FOOTER_COOKIES: "Cookies",
+    COOKIE_TEXT:
       "We use cookies to improve your experience and show you personalized ads.",
-    btn_acc: "Accept",
-    btn_close: "Close",
-    legal_content:
+    BUTTON_ACCEPT: "Accept",
+    BUTTON_CLOSE: "Close",
+    CONTENT_LEGAL:
       "Airfryer Saver is an informational tool. Savings calculations are estimates based on average appliance consumption (Oven 2500W vs Airfryer 1500W). We are not responsible for variations in your actual electricity bill.",
-    priv_content:
+    CONTENT_PRIVACY:
       "We do not store or request personal data. This site uses Google AdSense, which may use cookies to show personalized ads based on your interests and previous visits to this or other websites.",
-    cook_content:
+    CONTENT_COOKIES:
       "We use technical cookies necessary for the website's operation and third-party cookies (Google AdSense) to analyze traffic and personalize advertising. By browsing the web, you accept their use.",
   },
   fr: {
-    hero: "Cuisinez mieux, <span class='text-orange-500'>économisez.</span>",
-    elec: "Économie Électricité",
-    today: "Aujourd'hui",
-    annual: "Économie Annuelle",
-    share_m: "Partager",
-    health: "Santé",
-    exercise: "Sport équivalent",
-    share_h: "Partager Santé",
-    guide: "Guide des Temps",
-    faq: "FAQ",
-    seo_t: "Pourquoi l'airfryer?",
-    min_at: "MINUTES À",
-    nav_c: "Calculatrice",
-    nav_g: "Guide",
-    nav_f: "FAQ",
-    p1: "L'airfryer est le choix financier le plus intelligent en 2026. Cuisiner deux fois plus vite signifie des factures d'électricité réduites. Ce calculateur utilise des algorithmes de consommation réelle pour prouver vos économies quotidiennes.",
-    p2: "Économisez de l'argent et gagnez en santé en réduisant les graisses saturées de 80%. C'est l'efficacité pure pour votre maison sans sacrifier le goût croustillant.",
-    msg_m: "J'ai économisé {X}€ avec {F}!",
-    msg_h: "Moins {X} kcal avec {F}!",
-    f_legal: "Mentions Légales",
-    f_priv: "Confidentialité",
-    f_cook: "Cookies",
-    cookie_txt:
+    HERO_TITLE: "Cuisinez mieux, <span class='text-orange-500'>économisez.</span>",
+    LABEL_ELECTRICITY: "Économie Électricité",
+    LABEL_TODAY: "Aujourd'hui",
+    LABEL_ANNUAL: "Économie Annuelle",
+    BUTTON_SHARE_MONEY: "Partager",
+    LABEL_HEALTH: "Santé",
+    LABEL_EXERCISE: "Sport équivalent",
+    BUTTON_SHARE_HEALTH: "Partager Santé",
+    TITLE_GUIDE: "Guide des Temps",
+    TITLE_FAQ: "FAQ",
+    TITLE_SEO: "Pourquoi l'airfryer?",
+    LABEL_MINUTES_AT: "MINUTES À",
+    NAV_CALCULATOR: "Calculatrice",
+    NAV_GUIDE: "Guide",
+    NAV_FAQ: "FAQ",
+    SEO_PARAGRAPH_1: "L'airfryer est le choix financier le plus intelligent en 2026. Cuisiner deux fois plus vite signifie des factures d'électricité réduites. Ce calculateur utilise des algorithmes de consommation réelle pour prouver vos économies quotidiennes.",
+    SEO_PARAGRAPH_2: "Économisez de l'argent et gagnez en santé en réduisant les graisses saturées de 80%. C'est l'efficacité pure pour votre maison sans sacrifier le goût croustillant.",
+    SHARE_MESSAGE_MONEY: "J'ai économisé {X}€ avec {F}!",
+    SHARE_MESSAGE_HEALTH: "Moins {X} kcal avec {F}!",
+    FOOTER_LEGAL: "Mentions Légales",
+    FOOTER_PRIVACY: "Confidentialité",
+    FOOTER_COOKIES: "Cookies",
+    COOKIE_TEXT:
       "Nous utilisons des cookies pour améliorer votre expérience et diffuser des annonces.",
-    btn_acc: "Accepter",
-    btn_close: "Fermer",
-    legal_content:
+    BUTTON_ACCEPT: "Accepter",
+    BUTTON_CLOSE: "Fermer",
+    CONTENT_LEGAL:
       "Airfryer Saver est un outil informatif. Les calculs d'économies sont des estimations basées sur la consommation moyenne des appareils (Four 2500W vs Airfryer 1500W). Nous ne sommes pas responsables des variations de votre facture réelle.",
-    priv_content:
+    CONTENT_PRIVACY:
       "Nous ne stockons ni ne demandons de données personnelles. Ce site utilise Google AdSense, qui peut utiliser des cookies pour diffuser des annonces personnalisées basées sur vos intérêts et vos visites précédentes.",
-    cook_content:
+    CONTENT_COOKIES:
       "Nous utilisons des cookies techniques nécessaires au fonctionnement du site et des cookies tiers (Google AdSense) pour analyser le trafic et personnaliser la publicité. En naviguant sur le site, vous acceptez leur utilisation.",
   },
   it: {
-    hero: "Cucina meglio, <span class='text-orange-500'>risparmia.</span>",
-    elec: "Risparmio Elettrico",
-    today: "Oggi",
-    annual: "Risparmio Annuo",
-    share_m: "Condividi",
-    health: "Salute",
-    exercise: "Esercizio equivalente",
-    share_h: "Condividi Salute",
-    guide: "Guida Tempi",
-    faq: "FAQ",
-    seo_t: "Perché l'airfryer?",
-    min_at: "MINUTI A",
-    nav_c: "Calcolatrice",
-    nav_g: "Guida",
-    nav_f: "FAQ",
-    p1: "L'airfryer è la mossa finanziaria più intelligente del 2026. Cucinare in metà tempo significa bollette più basse. Questo calcolatore avanzato ti mostra quanto risparmi ogni giorno.",
-    p2: "Risparmia denaro e guadagna salute riducendo i grassi saturi dell'80%. Efficienza pura per la tua casa senza rinunciare alla croccantezza.",
-    msg_m: "Ho risparmiato {X}€ con {F}!",
-    msg_h: "Meno {X} kcal con {F}!",
-    f_legal: "Note Legali",
-    f_priv: "Privacy",
-    f_cook: "Cookies",
-    cookie_txt:
+    HERO_TITLE: "Cucina meglio, <span class='text-orange-500'>risparmia.</span>",
+    LABEL_ELECTRICITY: "Risparmio Elettrico",
+    LABEL_TODAY: "Oggi",
+    LABEL_ANNUAL: "Risparmio Annuo",
+    BUTTON_SHARE_MONEY: "Condividi",
+    LABEL_HEALTH: "Salute",
+    LABEL_EXERCISE: "Esercizio equivalente",
+    BUTTON_SHARE_HEALTH: "Condividi Salute",
+    TITLE_GUIDE: "Guida Tempi",
+    TITLE_FAQ: "FAQ",
+    TITLE_SEO: "Perché l'airfryer?",
+    LABEL_MINUTES_AT: "MINUTI A",
+    NAV_CALCULATOR: "Calcolatrice",
+    NAV_GUIDE: "Guida",
+    NAV_FAQ: "FAQ",
+    SEO_PARAGRAPH_1: "L'airfryer è la mossa finanziaria più intelligente del 2026. Cucinare in metà tempo significa bollette più basse. Questo calcolatore avanzato ti mostra quanto risparmi ogni giorno.",
+    SEO_PARAGRAPH_2: "Risparmia denaro e guadagna salute riducendo i grassi saturi dell'80%. Efficienza pura per la tua casa senza rinunciare alla croccantezza.",
+    SHARE_MESSAGE_MONEY: "Ho risparmiato {X}€ con {F}!",
+    SHARE_MESSAGE_HEALTH: "Meno {X} kcal con {F}!",
+    FOOTER_LEGAL: "Note Legali",
+    FOOTER_PRIVACY: "Privacy",
+    FOOTER_COOKIES: "Cookies",
+    COOKIE_TEXT:
       "Utilizziamo i cookie per migliorare la tua esperienza e mostrarti annunci.",
-    btn_acc: "Accetta",
-    btn_close: "Chiudi",
-    legal_content:
+    BUTTON_ACCEPT: "Accetta",
+    BUTTON_CLOSE: "Chiudi",
+    CONTENT_LEGAL:
       "Airfryer Saver è uno strumento informativo. I calcoli del risparmio sono stime basate sul consumo medio degli elettrodomestici (Forno 2500W vs Airfryer 1500W). Non siamo responsabili per variazioni nella bolletta elettrica reale.",
-    priv_content:
+    CONTENT_PRIVACY:
       "Non memorizziamo né richiediamo dati personali. Questo sito utilizza Google AdSense, che può utilizzare i cookie per mostrare annunci personalizzati basati sui tuoi interessi e sulle tue visite precedenti.",
-    cook_content:
+    CONTENT_COOKIES:
       "Utilizziamo cookie tecnici necessari per il funzionamento del sito e cookie di terze parti (Google AdSense) per analizzare il traffico e personalizzare la pubblicità. Navigando nel sito, ne accetti l'uso.",
   },
   de: {
-    hero: "Besser kochen, <span class='text-orange-500'>sparen.</span>",
-    elec: "Stromersparnis",
-    today: "Heute",
-    annual: "Jahresersparnis",
-    share_m: "Teilen",
-    health: "Gesundheit",
-    exercise: "Sport Äquivalent",
-    share_h: "Teilen",
-    guide: "Zeitanleitung",
-    faq: "FAQ",
-    seo_t: "Warum Airfryer?",
-    min_at: "MINUTEN BEI",
-    nav_c: "Rechner",
-    nav_g: "Anleitung",
-    nav_f: "FAQ",
-    p1: "Airfryers sind 2026 die klügste finanzielle Entscheidung. Schnelleres Kochen bedeutet niedrigere Rechnungen. Dieser Rechner zeigt Ihre täglichen Einsparungen präzise an.",
-    p2: "Sparen Sie Geld und bleiben Sie gesund, indem Sie gesättigte Fette um 80% reduzieren. Reine Effizienz für Ihr Zuhause ohne Geschmacksverlust.",
-    msg_m: "Habe {X}€ gespart mit {F}!",
-    msg_h: "{X} kcal weniger mit {F}!",
-    f_legal: "Impressum",
-    f_priv: "Datenschutz",
-    f_cook: "Cookies",
-    cookie_txt:
+    HERO_TITLE: "Besser kochen, <span class='text-orange-500'>sparen.</span>",
+    LABEL_ELECTRICITY: "Stromersparnis",
+    LABEL_TODAY: "Heute",
+    LABEL_ANNUAL: "Jahresersparnis",
+    BUTTON_SHARE_MONEY: "Teilen",
+    LABEL_HEALTH: "Gesundheit",
+    LABEL_EXERCISE: "Sport Äquivalent",
+    BUTTON_SHARE_HEALTH: "Teilen",
+    TITLE_GUIDE: "Zeitanleitung",
+    TITLE_FAQ: "FAQ",
+    TITLE_SEO: "Warum Airfryer?",
+    LABEL_MINUTES_AT: "MINUTEN BEI",
+    NAV_CALCULATOR: "Rechner",
+    NAV_GUIDE: "Anleitung",
+    NAV_FAQ: "FAQ",
+    SEO_PARAGRAPH_1: "Airfryers sind 2026 die klügste finanzielle Entscheidung. Schnelleres Kochen bedeutet niedrigere Rechnungen. Dieser Rechner zeigt Ihre täglichen Einsparungen präzise an.",
+    SEO_PARAGRAPH_2: "Sparen Sie Geld und bleiben Sie gesund, indem Sie gesättigte Fette um 80% reduzieren. Reine Effizienz für Ihr Zuhause ohne Geschmacksverlust.",
+    SHARE_MESSAGE_MONEY: "Habe {X}€ gespart mit {F}!",
+    SHARE_MESSAGE_HEALTH: "{X} kcal weniger mit {F}!",
+    FOOTER_LEGAL: "Impressum",
+    FOOTER_PRIVACY: "Datenschutz",
+    FOOTER_COOKIES: "Cookies",
+    COOKIE_TEXT:
       "Wir verwenden Cookies, um Ihre Erfahrung zu verbessern und Anzeigen anzuzeigen.",
-    btn_acc: "Akzeptieren",
-    btn_close: "Schließen",
-    legal_content:
+    BUTTON_ACCEPT: "Akzeptieren",
+    BUTTON_CLOSE: "Schließen",
+    CONTENT_LEGAL:
       "Airfryer Saver ist ein Informationstool. Die Einsparungsberechnungen sind Schätzungen, die auf dem durchschnittlichen Verbrauch von Geräten basieren (Backofen 2500W vs. Airfryer 1500W). Wir haften nicht für Abweichungen in Ihrer tatsächlichen Stromrechnung.",
-    priv_content:
+    CONTENT_PRIVACY:
       "Wir speichern oder fordern keine personenbezogenen Daten an. Diese Website verwendet Google AdSense, das Cookies verwenden kann, um personalisierte Anzeigen basierend auf Ihren Interessen und früheren Besuchen anzuzeigen.",
-    cook_content:
+    CONTENT_COOKIES:
       "Wir verwenden für den Betrieb der Website notwendige technische Cookies und Cookies von Drittanbietern (Google AdSense), um den Datenverkehr zu analysieren und die Werbung zu personalisieren. Durch das Surfen auf der Website akzeptieren Sie deren Verwendung.",
   },
 };
 
-const faqData = {
+const FAQ_DATA = {
   es: [
     {
       q: "¿Consume menos que un horno?",
@@ -288,7 +288,7 @@ const faqData = {
   ],
 };
 
-const foodData = {
+const FOOD_DATA = {
   patatas: {
     icono: "🍟",
     nombres: {
@@ -627,6 +627,7 @@ const foodData = {
       fr: "Pomme",
       it: "Mela",
       de: "Apfel",
+      de: "Apfel",
     },
     trad: 60,
     air: 0,
@@ -798,51 +799,16 @@ const foodData = {
       es: "Rellénalos con ajo y perejil para un sabor explosivo.",
       en: "Stuff them with garlic and parsley for explosive flavor.",
       fr: "Garnissez-les d'ail et de persil pour une saveur explosive.",
-      it: "Riempili con aglio e prezzemolo per un sapore esplosivo.",
-      de: "Mit Knoblauch und Petersilie füllen für tollen Geschmack.",
+      it: "Garnissez-les d'ail et de persil pour une saveur explosive.",
+      de: "Mit Knoblauch und Petersilie füllen für explosiven Geschmack.",
     },
   },
 };
 
-const legalTexts = {
-  es: {
-    legal:
-      "Aviso Legal 2026: El uso de esta calculadora es meramente informativo. Los cálculos de ahorro eléctrico y calórico son estimaciones basadas en promedios de consumo y no garantizan resultados exactos. Airfryer Saver no se hace responsable del mal uso de los electrodomésticos.",
-    privacidad:
-      "Política de Privacidad: En Airfryer Saver respetamos tu anonimato. No almacenamos datos personales, ni correos, ni direcciones IP. Los ajustes de idioma se guardan localmente en tu navegador para mejorar tu experiencia.",
-    cookies:
-      "Política de Cookies: Utilizamos cookies técnicas esenciales para el funcionamiento del sitio y para recordar tu preferencia de idioma. No utilizamos cookies de rastreo ni publicitarias de terceros.",
-  },
-  en: {
-    legal:
-      "Legal Notice 2026: This calculator is for informational purposes only. Electricity and calorie savings are estimates based on average consumption and do not guarantee exact results. Airfryer Saver is not liable for any appliance misuse.",
-    privacidad:
-      "Privacy Policy: At Airfryer Saver, we respect your anonymity. We do not store personal data, emails, or IP addresses. Language settings are stored locally in your browser to enhance your experience.",
-    cookies:
-      "Cookie Policy: We use essential technical cookies for the website to function and to remember your language preference. No tracking or third-party advertising cookies are used.",
-  },
-  fr: {
-    legal:
-      "Mentions Légales 2026 : Cette calculatrice est fournie à titre informatif. Les économies d'énergie et de calories sont des estimations et ne garantissent pas de résultats exacts.",
-    privacidad:
-      "Confidentialité : Nous ne stockons aucune donnée personnelle, e-mail ou adresse IP. Vos préférences sont enregistrées localement dans votre navigateur.",
-    cookies:
-      "Cookies : Nous utilisons uniquement des cookies techniques essentiels au fonctionnement du site.",
-  },
-  it: {
-    legal:
-      "Note Legali 2026: Questo calcolatore ha scopo puramente informativo. I risparmi energetici e calorici sono stime basate su medie e non garantiscono risultati esatti.",
-    privacidad:
-      "Privacy: Non memorizziamo dati personali, e-mail o indirizzi IP. Le impostazioni della lingua sono salvate localmente nel browser.",
-    cookies:
-      "Cookie: Utilizziamo solo cookie tecnici essenziali per il funzionamento del sito.",
-  },
-  de: {
-    legal:
-      "Impressum 2026: Dieser Rechner dient nur zu Informationszwecken. Die Strom- und Kalorienersparnisse sind Schätzungen und garantieren keine exakten Ergebnisse.",
-    privacidad:
-      "Datenschutz: Wir speichern keine persönlichen Daten, E-Mails oder IP-Adressen. Spracheinstellungen werden lokal in Ihrem Browser gespeichert.",
-    cookies:
-      "Cookies: Wir verwenden nur technisch notwendige Cookies für den Betrieb der Website.",
-  },
+const DEVICE_NAMES = {
+  es: { horno: "HORNO", airfryer: "AIRFRYER", temp: "TEMP" },
+  en: { horno: "OVEN", airfryer: "AIR FRYER", temp: "TEMP" },
+  fr: { horno: "FOUR", airfryer: "FRITEUSE", temp: "TEMP" },
+  it: { horno: "FORNO", airfryer: "FRIGGITRICE", temp: "TEMP" },
+  de: { horno: "OFEN", airfryer: "HEISSLUFTFRITTEUSE", temp: "TEMP" },
 };
