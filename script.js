@@ -104,24 +104,32 @@ function actualizarTodo() {
   if (!select || !select.value) return;
 
   const foodKey = select.value;
-  const food = foodData[foodKey];
+  const food = foodData[foodKey]; // Asegúrate de que foodData es tu diccionario
   if (!food) return;
 
-  // 3. CONVERSIÓN Y CÁLCULOS
+  // 3. CONVERSIÓN Y CÁLCULOS (Sin cambiar variables)
   let tiempoHorno = parseFloat(food.trad) || 0;
+  // Si food.trad es 450 (calorías), lo convierte en 45 minutos para el cálculo de luz
   if (tiempoHorno > 120) tiempoHorno = tiempoHorno / 10;
-  let tiempoAir = parseFloat(food.tiempo) || 0;
-  const ahorroGrasa = parseFloat(food.air) || 0;
 
-  const consumoHorno = 2.2 * (tiempoHorno / 60) * 0.6;
+  let tiempoAir = parseFloat(food.tiempo) || 0; // Tus 20 min
+  const ahorroGrasa = parseFloat(food.air) || 0; // Tus 15 kcal
+
+  // Subimos la potencia del horno a 2.6 para que se note el ahorro real
+  // El factor 0.6 es porque el horno no está al 100% todo el rato (termostato)
+  const consumoHorno = 2.6 * (tiempoHorno / 60) * 0.6;
   const consumoAir = 1.5 * (tiempoAir / 60) * 0.7;
 
   const ahorroHoy = Math.max(
     0,
     consumoHorno * elecPrice - consumoAir * elecPrice
   );
-  const ahorroAnual = ahorroHoy * 104;
-  const ahorroCal = ahorroGrasa * 9 + 100;
+
+  const ahorroAnual = ahorroHoy * 104; // 2 veces por semana al año
+
+  // Ajustamos el cálculo de calorías para que use tus datos
+  // Si food.trad (450) son las kcal del horno y food.air (15) las de la airfryer:
+  const ahorroCal = Math.max(0, parseFloat(food.trad) - ahorroGrasa);
 
   // 4. TRADUCCIONES RÁPIDAS PARA EL TAG
   const dict = {
