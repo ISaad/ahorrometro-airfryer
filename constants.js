@@ -827,11 +827,11 @@ const FOOD_DATA = {
 };
 
 const DEVICE_NAMES = {
-  es: { horno: "HORNO", airfryer: "AIRFRYER", temp: "TEMP" },
-  en: { horno: "OVEN", airfryer: "AIR FRYER", temp: "TEMP" },
-  fr: { horno: "FOUR", airfryer: "FRITEUSE", temp: "TEMP" },
-  it: { horno: "FORNO", airfryer: "FRIGGITRICE", temp: "TEMP" },
-  de: { horno: "OFEN", airfryer: "HEISSLUFTFRITTEUSE", temp: "TEMP" },
+  es: { horno: "Horno", airfryer: "Airfryer", temp: "Temp" },
+  en: { horno: "Oven", airfryer: "Air Fryer", temp: "Temp" },
+  fr: { horno: "Four", airfryer: "Friteuse", temp: "Temp" },
+  it: { horno: "Forno", airfryer: "Friggitrice", temp: "Temp" },
+  de: { horno: "Ofen", airfryer: "Heißluftfritteuse", temp: "Temp" },
 };
 
 const POWER_DATA = {
