@@ -29,6 +29,7 @@ const TRANSLATIONS = {
     COOKIE_TEXT: "Utilizamos cookies propias y de terceros para analizar el tráfico y mostrar anuncios personalizados. Puedes aceptar todas las cookies o rechazar las que no sean necesarias.",
     BUTTON_ACCEPT: "Aceptar todas",
     BUTTON_CLOSE: "Rechazar opcionales",
+    BUTTON_INSTALL: "Instalar App",
     CONTENT_LEGAL:
       "Airfryer Saver es una herramienta informativa. Los cálculos de ahorro son estimaciones basadas en consumos medios de electrodomésticos (Horno 3000W vs Airfryer 1500W). No nos hacemos responsables de variaciones en la factura eléctrica real.",
     CONTENT_PRIVACY:
@@ -62,6 +63,7 @@ const TRANSLATIONS = {
     COOKIE_TEXT: "We use our own and third-party cookies to analyze traffic and show personalized ads. You can accept all cookies or reject non-essential ones.",
     BUTTON_ACCEPT: "Accept all",
     BUTTON_CLOSE: "Reject optional",
+    BUTTON_INSTALL: "Install App",
     CONTENT_LEGAL:
       "Airfryer Saver is an informational tool. Savings calculations are estimates based on average appliance consumption (Oven 3000W vs Airfryer 1500W). We are not responsible for variations in your actual electricity bill.",
     CONTENT_PRIVACY:
@@ -95,6 +97,7 @@ const TRANSLATIONS = {
     COOKIE_TEXT: "Nous utilisons des cookies pour analyser le trafic et diffuser des annonces personnalisées. Vous pouvez accepter tous les cookies ou refuser ceux qui ne sont pas nécessaires.",
     BUTTON_ACCEPT: "Tout accepter",
     BUTTON_CLOSE: "Refuser optionnels",
+    BUTTON_INSTALL: "Installer",
     CONTENT_LEGAL:
       "Airfryer Saver est un outil informatif. Les calculs d'économies sont des estimations basées sur la consommation moyenne des appareils (Four 3000W vs Airfryer 1500W). Nous ne sommes pas responsables des variations de votre facture réelle.",
     CONTENT_PRIVACY:
@@ -128,6 +131,7 @@ const TRANSLATIONS = {
     COOKIE_TEXT: "Utilizziamo cookie propri e di terze parti per analizzare il traffico e mostrare annunci personalizzati. Puoi accettare tutti i cookie o rifiutare quelli non necessari.",
     BUTTON_ACCEPT: "Accetta tutti",
     BUTTON_CLOSE: "Rifiuta opzionali",
+    BUTTON_INSTALL: "Installa App",
     CONTENT_LEGAL:
       "Airfryer Saver è uno strumento informativo. I calcoli del risparmio sono stime basate sul consumo medio degli elettrodomestici (Forno 3000W vs Airfryer 1500W). Non siamo responsabili per variazioni nella bolletta elettrica reale.",
     CONTENT_PRIVACY:
@@ -161,6 +165,7 @@ const TRANSLATIONS = {
     COOKIE_TEXT: "Wir verwenden eigene und Cookies von Drittanbietern, um den Datenverkehr zu analysieren und personalisierte Werbung anzuzeigen. Sie können alle Cookies akzeptieren oder optionale ablehnen.",
     BUTTON_ACCEPT: "Alle akzeptieren",
     BUTTON_CLOSE: "Optionale ablehnen",
+    BUTTON_INSTALL: "Installieren",
     CONTENT_LEGAL:
       "Airfryer Saver ist ein Informationstool. Die Einsparungsberechnungen sind Schätzungen, die auf dem durchschnittlichen Verbrauch von Geräten basieren (Backofen 3000W vs. Airfryer 1500W). Wir haften nicht für Abweichungen in Ihrer tatsächlichen Stromrechnung.",
     CONTENT_PRIVACY:

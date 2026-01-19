@@ -808,6 +808,84 @@ footer {
     background: var(--slate-600);
 }
 
+/* Install Button */
+.install-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background-color: var(--orange-500);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 9999px;
+    font-weight: 800;
+    font-size: 0.875rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 10px 15px -3px rgba(249, 115, 22, 0.4);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.install-btn.floating {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    animation: bounceIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), pulse-orange 2s infinite;
+}
+
+.install-btn:hover {
+    background-color: var(--orange-600);
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 20px 25px -5px rgba(249, 115, 22, 0.5);
+}
+
+.install-btn:active {
+    transform: translateY(0) scale(0.98);
+}
+
+@keyframes bounceIn {
+    0% {
+        transform: scale(0.3);
+        opacity: 0;
+    }
+
+    50% {
+        transform: scale(1.05);
+        opacity: 1;
+    }
+
+    70% {
+        transform: scale(0.9);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes pulse-orange {
+    0% {
+        box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.7);
+    }
+
+    70% {
+        box-shadow: 0 0 0 15px rgba(249, 115, 22, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(249, 115, 22, 0);
+    }
+}
+
+@media (max-width: 640px) {
+    .install-btn.floating {
+        bottom: 1.5rem;
+        right: 1.5rem;
+        left: 1.5rem;
+        justify-content: center;
+    }
+}
+
 /* Animation */
 @keyframes slideUp {
     from {

@@ -35,6 +35,10 @@ function changeLanguage(lang) {
     document.getElementById("btn-cookie-close").innerText = t.BUTTON_CLOSE;
   }
 
+  if (document.getElementById("install-text")) {
+    document.getElementById("install-text").innerText = t.BUTTON_INSTALL;
+  }
+
   // Get food keys sorted alphabetically by their name in the current language
   const sortedFoodKeys = Object.keys(FOOD_DATA).sort((a, b) => {
     const nameA = FOOD_DATA[a].nombres[lang] || FOOD_DATA[a].nombres["es"];
@@ -392,4 +396,55 @@ function aceptarCookies() {
 function cerrarBanner() {
   const banner = document.getElementById("cookie-banner");
   if (banner) banner.classList.remove("show");
+}
+
+// --- PWA / Install logic ---
+let deferredPrompt;
+const installBtn = document.getElementById('install-btn');
+
+window.addEventListener('beforeinstallprompt', (e) => {
+  // Prevent the mini-infobar from appearing on mobile
+  e.preventDefault();
+  // Stash the event so it can be triggered later.
+  deferredPrompt = e;
+  // Update UI notify the user they can install the PWA
+  if (installBtn) {
+    installBtn.classList.remove('hidden');
+  }
+});
+
+// FORCING VISIBILITY FOR DEBUGGING (Always show the button as requested)
+if (installBtn) {
+  installBtn.classList.remove('hidden');
+}
+
+if (installBtn) {
+  installBtn.addEventListener('click', async () => {
+    if (!deferredPrompt) return;
+    // Show the install prompt
+    deferredPrompt.prompt();
+    // Wait for the user to respond to the prompt
+    const { outcome } = await deferredPrompt.userChoice;
+    // We've used the prompt, and can't use it again, throw it away
+    deferredPrompt = null;
+    // Hide the install button
+    installBtn.classList.add('hidden');
+  });
+}
+
+window.addEventListener('appinstalled', (event) => {
+  // Clear the deferredPrompt so it can be garbage collected
+  deferredPrompt = null;
+  // Hide the install button
+  if (installBtn) installBtn.classList.add('hidden');
+  console.log('PWA was installed');
+});
+
+// Register Service Worker
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('./sw.js')
+      .then(reg => console.log('Service Worker registered', reg))
+      .catch(err => console.error('Service Worker registration failed', err));
+  });
 }

@@ -3,15 +3,30 @@
 
 <head>
     <meta charset="UTF-8">
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-KJXJCP6T');</script>
+    <!-- End Google Tag Manager -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Airfryer Saver | Ultimate International Savings Calculator ⚡🌍</title>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap"
         rel="stylesheet">
     <link href="./styles.css?v=13" rel="stylesheet">
     <link rel="icon" type="image/png" href="./favicon.png">
+    <link rel="manifest" href="./manifest.json">
 </head>
 
 <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KJXJCP6T" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
 
     <nav class="navbar">
         <div class="container flex justify-between items-center">
@@ -32,35 +47,36 @@
                 <a href="#tiempos" id="nav-guide">Guía</a>
                 <a href="#faq" id="nav-faq">FAQ</a>
             </div>
+            <div class="flex items-center" style="gap: 1rem;">
+                <div class="relative" id="custom-select-container">
+                    <button onclick="toggleLangMenu()" id="lang-btn" class="lang-btn">
+                        <span id="lang-selected" class="flex items-center" style="gap: 0.5rem;"></span>
+                        <!-- Chevron Down -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                            stroke="#94a3b8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m6 9 6 6 6-6" />
+                        </svg>
+                    </button>
 
-            <div class="relative" id="custom-select-container">
-                <button onclick="toggleLangMenu()" id="lang-btn" class="lang-btn">
-                    <span id="lang-selected" class="flex items-center" style="gap: 0.5rem;"></span>
-                    <!-- Chevron Down -->
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                        stroke="#94a3b8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="m6 9 6 6 6-6" />
-                    </svg>
-                </button>
-
-                <div id="lang-options" class="lang-menu hidden">
-                    <div onclick="selectLang('es', 'es')" class="lang-option">
-                        <img src="https://flagcdn.com/w20/es.png" width="20"> Español
-                    </div>
-                    <div onclick="selectLang('en', 'us')" class="lang-option">
-                        <img src="https://flagcdn.com/w20/us.png" width="20"> English (US)
-                    </div>
-                    <div onclick="selectLang('en', 'gb')" class="lang-option">
-                        <img src="https://flagcdn.com/w20/gb.png" width="20"> English (UK)
-                    </div>
-                    <div onclick="selectLang('fr', 'fr')" class="lang-option">
-                        <img src="https://flagcdn.com/w20/fr.png" width="20"> Français
-                    </div>
-                    <div onclick="selectLang('it', 'it')" class="lang-option">
-                        <img src="https://flagcdn.com/w20/it.png" width="20"> Italiano
-                    </div>
-                    <div onclick="selectLang('de', 'de')" class="lang-option">
-                        <img src="https://flagcdn.com/w20/de.png" width="20"> Deutsch
+                    <div id="lang-options" class="lang-menu hidden">
+                        <div onclick="selectLang('es', 'es')" class="lang-option">
+                            <img src="https://flagcdn.com/w20/es.png" width="20"> Español
+                        </div>
+                        <div onclick="selectLang('en', 'us')" class="lang-option">
+                            <img src="https://flagcdn.com/w20/us.png" width="20"> English (US)
+                        </div>
+                        <div onclick="selectLang('en', 'gb')" class="lang-option">
+                            <img src="https://flagcdn.com/w20/gb.png" width="20"> English (UK)
+                        </div>
+                        <div onclick="selectLang('fr', 'fr')" class="lang-option">
+                            <img src="https://flagcdn.com/w20/fr.png" width="20"> Français
+                        </div>
+                        <div onclick="selectLang('it', 'it')" class="lang-option">
+                            <img src="https://flagcdn.com/w20/it.png" width="20"> Italiano
+                        </div>
+                        <div onclick="selectLang('de', 'de')" class="lang-option">
+                            <img src="https://flagcdn.com/w20/de.png" width="20"> Deutsch
+                        </div>
                     </div>
                 </div>
             </div>
@@ -239,6 +255,16 @@
             <button onclick="closeLegal()" class="modal-close-btn">Cerrar</button>
         </div>
     </div>
+
+    <button id="install-btn" class="install-btn floating hidden">
+        <div class="logo-icon" style="box-shadow: none;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="white"
+                stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+            </svg>
+        </div>
+        <span id="install-text">Instalar App</span>
+    </button>
 
     <script src="constants.js"></script>
     <script src="articles.js"></script>

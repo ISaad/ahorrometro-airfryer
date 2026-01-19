@@ -1,0 +1,17 @@
+{
+  "name": "Airfryer Saver | Ultimate Savings Calculator",
+  "short_name": "AirfryerSaver",
+  "description": "Calcula cuánto ahorras usando tu airfryer frente al horno convencional. Ahorra energía, tiempo y dinero.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#f97316",
+  "icons": [
+    {
+      "src": "./favicon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
